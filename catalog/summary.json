@@ -1,0 +1,24 @@
+{
+  "skill_sources": 6014,
+  "unique_skill_versions": 2058,
+  "source_skill_md_versions": 1218,
+  "project_files": 1438,
+  "project_categories": {
+    "project_instruction": 6,
+    "production_script": 1287,
+    "project_workflow": 59,
+    "workflow_dependency": 2,
+    "global-instructions": 1,
+    "resolve_effect_template": 4,
+    "resolve_audio_preset": 7,
+    "preset_installation_instructions": 3,
+    "resolve_render_preset": 20,
+    "resolve_subtitle_preset": 11,
+    "resolve_grade_settings": 38
+  },
+  "payload_files": 19672,
+  "payload_bytes": 530983402,
+  "excluded_entries": 70,
+  "redactions": 0,
+  "units": 1329
+}

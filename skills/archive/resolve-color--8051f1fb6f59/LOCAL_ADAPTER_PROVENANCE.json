@@ -1,0 +1,34 @@
+{
+  "upstream_repository": "samuelgursky/davinci-resolve-mcp",
+  "upstream_commit": "90eba8cdf4df333beb4ce41fe0ab198b8fa7d125",
+  "license": "MIT",
+  "upstream_originals_unchanged": true,
+  "local_files": [
+    {
+      "path": "resolve-advanced/vendor/drx-codec/drx-generator-local-compat.js",
+      "sha256": "143aa3f8d55c788eba89005eeaa5d24e296319926934d0b4bad0c256835f6c97",
+      "bytes": 185523
+    },
+    {
+      "path": "scripts/native-secondary-grade.cjs",
+      "sha256": "c751cb424f389384d8cf78128f864b84ba009506e078730aeb7d2a1b7e52dc4b",
+      "bytes": 5567
+    },
+    {
+      "path": "NATIVE_CURVES_COMPATIBILITY.md",
+      "sha256": "a50e3e7564b1674c71f060334b181f286693357fb8ab92b8bb4d6f5bf8ee33dd",
+      "bytes": 3459
+    }
+  ],
+  "native_verified_build": "DaVinci Resolve Studio 21.0.0.48",
+  "native_verified_surfaces": [
+    "five-interior-point YRGB Bezier cage with shared grid and native meta2",
+    "HSL qualifiers with actual frame contributions",
+    "preserved single original node F9 bytes + matching rendered frame when additions bypassed"
+  ],
+  "original_graph_scope": "Zero or one static original node. Multi-node source graphs refused. Does not claim preservation of arbitrary OFX/keyframes.",
+  "no_persistent_mcp_installed": true,
+  "no_cloud_service": true,
+  "cli_all_output_paths_protected": true,
+  "unverified_hsl_curve_emission_refused": true
+}

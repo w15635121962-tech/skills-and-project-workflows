@@ -1,0 +1,4 @@
+interface:
+  display_name: "Format C V2.5提示词"
+  short_description: "按连续分段时间轴写清情绪触发、可见动作、对手反应与镜头接续"
+  default_prompt: "使用 $write-format-c-video-prompts 读取本机统一的Format C V2.5提示词技能，将当前剧本写成 完整组头及逐shot十一字段的最终提示词；保留源语言原台词。"

@@ -1,0 +1,122 @@
+{
+  "skill_roots": [
+    {
+      "path": "/Users/zc/.codex/skills",
+      "kind": "active-codex",
+      "exists": true
+    },
+    {
+      "path": "/Users/zc/.agents/skills",
+      "kind": "active-agents",
+      "exists": true
+    },
+    {
+      "path": "/Users/zc/.claude/skills",
+      "kind": "active-claude",
+      "exists": false
+    },
+    {
+      "path": "/Users/zc/.cursor/skills",
+      "kind": "active-cursor",
+      "exists": true
+    },
+    {
+      "path": "/Users/zc/.cursor/skills-cursor",
+      "kind": "bundled-cursor",
+      "exists": true
+    },
+    {
+      "path": "/Users/zc/.codex/plugins/cache",
+      "kind": "plugin-codex",
+      "exists": true
+    },
+    {
+      "path": "/Users/zc/.agents/plugins",
+      "kind": "plugin-agents",
+      "exists": true
+    },
+    {
+      "path": "/Users/zc/.claude/plugins",
+      "kind": "plugin-claude",
+      "exists": false
+    },
+    {
+      "path": "/Users/zc/.cursor/plugins",
+      "kind": "plugin-cursor",
+      "exists": true
+    },
+    {
+      "path": "/Users/zc/.codex/skill-backups",
+      "kind": "backup",
+      "exists": true
+    },
+    {
+      "path": "/Users/zc/.codex/skill-imports",
+      "kind": "import",
+      "exists": true
+    },
+    {
+      "path": "/Users/zc/.codex/backups",
+      "kind": "backup",
+      "exists": true
+    },
+    {
+      "path": "/Users/zc/.claude/backups",
+      "kind": "backup-claude",
+      "exists": true
+    },
+    {
+      "path": "/Users/zc/.codex/memories/skills",
+      "kind": "memory-skill",
+      "exists": true
+    },
+    {
+      "path": "/Volumes/YSAigc/Codex",
+      "kind": "historical-codex-volume",
+      "exists": true
+    },
+    {
+      "path": "/Volumes/YSAigc/WorkBuddy",
+      "kind": "historical-workbuddy",
+      "exists": true
+    },
+    {
+      "path": "/Volumes/YSAigc/剧作项目/我不再做教父的大码人形抱枕/skills-export-20261019/payload",
+      "kind": "historical-project-export",
+      "exists": true
+    }
+  ],
+  "project_scope": {
+    "inventory_path": "/tmp/codex-project-workflow-inventory-20261024.json",
+    "scanned_roots": [
+      "/Volumes/YSAigc",
+      "/Volumes/Aigc01A",
+      "/Volumes/Aigc02B",
+      "/Users/zc/.codex/.chatgpt-projects"
+    ],
+    "counts": {
+      "project_instruction": 6,
+      "production_script": 1287,
+      "project_workflow": 59,
+      "workflow_dependency": 2
+    },
+    "total": 1354,
+    "bytes": 13702076,
+    "scope": "Project workflow documents, rules, production source and dependency declarations; excludes media, complete screenplay or shot prompt output, SRT output, accounts, conversations, system directories, runtimes, skills export payload, codex backup, skill and plugin subtrees.",
+    "limitations": [
+      "No full system volume scan; only known ChatGPT project directories.",
+      "Unmounted disks and cloud sources are not visible.",
+      "Restricted Spotlight, Trashes, TemporaryItems, DocumentRevisions were not read.",
+      "Duplicate sources retained and can be SHA256-deduplicated.",
+      "Historical scripts may reference local paths and old processes; archival does not mean execution or new workflow authority."
+    ]
+  },
+  "notes": [
+    "Read-only filesystem inventory; no account, authentication, cookies or token files were opened.",
+    "node_modules, git, virtual environments, runtime browser storage and logs omitted.",
+    "Deduplication here uses real directory path, not identical content hashes. Plugin versions are intentionally separate.",
+    "Archives are metadata only and may duplicate listed directories.",
+    "External-reference clues are text patterns, not resolved dependencies; parent should resolve only necessary reusable code/docs and exclude machine state.",
+    "Supplemented historical sources requested by parent; SKILL.md SHA-256 provided for preliminary duplicate grouping; full directory content hashes still needed for lossless deduplication."
+  ]
+}

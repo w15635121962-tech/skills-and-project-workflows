@@ -1,0 +1,4 @@
+interface:
+  display_name: "短剧分镜生成器"
+  short_description: "将竖屏短剧剧本拆成连续、稳定且可直接用于AI生成的专业镜头卡"
+  default_prompt: "Use $shortdrama-storyboard to turn this vertical short-drama script into a generation-ready storyboard."

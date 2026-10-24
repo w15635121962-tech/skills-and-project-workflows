@@ -1,0 +1,3 @@
+interface:
+  display_name: "DaVinci Audio Crossfades"
+  short_description: "Apply precise two-frame dialogue audio crossfades"

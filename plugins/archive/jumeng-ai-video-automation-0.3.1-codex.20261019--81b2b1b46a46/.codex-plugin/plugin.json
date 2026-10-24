@@ -1,0 +1,18 @@
+{
+  "name": "jumeng-ai-video-automation",
+  "version": "0.3.1+codex.20261019",
+  "description": "按当前请求处理分组镜头设计、提示词3.0、剧梦原生素材绑定、持久保存和已授权的视频生成。",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "剧梦制作与提示词3.0",
+    "shortDescription": "按本次授权处理镜头设计、提示词3.0、素材绑定、保存与生成。",
+    "longDescription": "普通镜头设计保留分组镜头与动作时间轴；最终提示词使用本机统一的short-drama-prompts-v3，平台操作使用jumeng-episode-producer。已有正确资产可复用，原生引用与持久保存回读、生成受理、完成和实际回放分别核对。",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "按本次请求完成剧梦制作所需阶段；新写提示词采用提示词3.0八字段，沿用已明确授权，并核对素材归属与持久保存。"
+  }
+}

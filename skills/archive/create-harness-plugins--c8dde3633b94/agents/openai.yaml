@@ -1,0 +1,6 @@
+interface:
+  display_name: "插件工坊"
+  short_description: "创建、验证并安装 DeepSeek Harness 个人插件"
+  default_prompt: "Use $create-harness-plugins to create and install a personal Harness plugin."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,85 @@
+{
+	Tools = ordered() {
+		HumanPOVEffect = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				MainInput1 = InstanceInput { SourceOp = "HumanPOV_1", Source = "Input", },
+				Preset = InstanceInput { SourceOp = "HumanPOV_1", Source = "Preset", Name = "人物状态", Default = 1, },
+				Strength = InstanceInput { SourceOp = "HumanPOV_1", Source = "Strength", Name = "整体强度", Default = 1, },
+				Mix = InstanceInput { SourceOp = "HumanPOV_1", Source = "Mix", Name = "效果混合", Default = 1, },
+				FPS = InstanceInput { SourceOp = "HumanPOV_1", Source = "FPS", Name = "时间线帧率", Default = 24, },
+				Seed = InstanceInput { SourceOp = "HumanPOV_1", Source = "Seed", Name = "随机种子", Default = 7, },
+				Speed = InstanceInput { SourceOp = "HumanPOV_1", Source = "Speed", Name = "动作速度", Default = 1, },
+				Bob = InstanceInput { SourceOp = "HumanPOV_1", Source = "Bob", Name = "步伐上下起伏 %", Default = 0.55, },
+				Sway = InstanceInput { SourceOp = "HumanPOV_1", Source = "Sway", Name = "头部左右摆动 %", Default = 0.35, },
+				Breath = InstanceInput { SourceOp = "HumanPOV_1", Source = "Breath", Name = "呼吸起伏 %", Default = 0.18, },
+				Jitter = InstanceInput { SourceOp = "HumanPOV_1", Source = "Jitter", Name = "微颤 %", Default = 0.06, },
+				Saccade = InstanceInput { SourceOp = "HumanPOV_1", Source = "Saccade", Name = "眼球扫视 %", Default = 0.16, },
+				Roll = InstanceInput { SourceOp = "HumanPOV_1", Source = "Roll", Name = "头部倾斜 °", Default = 0.65, },
+				ManualX = InstanceInput { SourceOp = "HumanPOV_1", Source = "ManualX", Name = "手动水平观察 %", Default = 0, },
+				ManualY = InstanceInput { SourceOp = "HumanPOV_1", Source = "ManualY", Name = "手动垂直观察 %", Default = 0, },
+				ManualRoll = InstanceInput { SourceOp = "HumanPOV_1", Source = "ManualRoll", Name = "手动倾斜 °", Default = 0, },
+				Overscan = InstanceInput { SourceOp = "HumanPOV_1", Source = "Overscan", Name = "自动裁边放大 %", Default = 5, },
+				MotionBlur = InstanceInput { SourceOp = "HumanPOV_1", Source = "MotionBlur", Name = "运动拖影", Default = 0.55, },
+				AutoBlink = InstanceInput { SourceOp = "HumanPOV_1", Source = "AutoBlink", Name = "自动眨眼", Default = 1, },
+				BlinkInterval = InstanceInput { SourceOp = "HumanPOV_1", Source = "BlinkInterval", Name = "平均眨眼间隔 秒", Default = 4.2, },
+				BlinkDuration = InstanceInput { SourceOp = "HumanPOV_1", Source = "BlinkDuration", Name = "闭眼时长 秒", Default = 0.16, },
+				DoubleBlink = InstanceInput { SourceOp = "HumanPOV_1", Source = "DoubleBlink", Name = "连续眨眼概率", Default = 0.18, },
+				ManualBlink = InstanceInput { SourceOp = "HumanPOV_1", Source = "ManualBlink", Name = "手动闭眼", Default = 0, },
+				LidSoftness = InstanceInput { SourceOp = "HumanPOV_1", Source = "LidSoftness", Name = "眼睑柔边", Default = 0.055, },
+				LidCurve = InstanceInput { SourceOp = "HumanPOV_1", Source = "LidCurve", Name = "眼睑弧度", Default = 1, },
+				Gaze = InstanceInput { SourceOp = "HumanPOV_1", Source = "Gaze", Name = "注视中心", DefaultX = 0.5, DefaultY = 0.5, },
+				PeripheralBlur = InstanceInput { SourceOp = "HumanPOV_1", Source = "PeripheralBlur", Name = "周边视觉虚化", Default = 0.38, },
+				PeripheralDesat = InstanceInput { SourceOp = "HumanPOV_1", Source = "PeripheralDesat", Name = "周边视觉降饱和", Default = 0.08, },
+				Vignette = InstanceInput { SourceOp = "HumanPOV_1", Source = "Vignette", Name = "生理暗角", Default = 0.22, },
+				Chromatic = InstanceInput { SourceOp = "HumanPOV_1", Source = "Chromatic", Name = "周边色散", Default = 0.16, },
+				Distortion = InstanceInput { SourceOp = "HumanPOV_1", Source = "Distortion", Name = "眼球曲率", Default = 0.022, },
+				Exposure = InstanceInput { SourceOp = "HumanPOV_1", Source = "Exposure", Name = "曝光补偿 EV", Default = 0, },
+				Adaptation = InstanceInput { SourceOp = "HumanPOV_1", Source = "Adaptation", Name = "曝光适应波动 EV", Default = 0.045, },
+				Quality = InstanceInput { SourceOp = "HumanPOV_1", Source = "Quality", Name = "采样质量", Default = 1, }
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput { SourceOp = "HumanPOV_1", Source = "Output", }
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				HumanPOV_1 = HumanPOV {
+					CtrlWZoom = false,
+					Inputs = {
+						Preset = Input { Value = 1, },
+						Strength = Input { Value = 1, },
+						Mix = Input { Value = 1, },
+						FPS = Input { Value = 24, },
+						Seed = Input { Value = 7, },
+						Speed = Input { Value = 1, },
+						Bob = Input { Value = 0.55, },
+						Sway = Input { Value = 0.35, },
+						Breath = Input { Value = 0.18, },
+						Jitter = Input { Value = 0.06, },
+						Saccade = Input { Value = 0.16, },
+						Roll = Input { Value = 0.65, },
+						Overscan = Input { Value = 5, },
+						MotionBlur = Input { Value = 0.55, },
+						AutoBlink = Input { Value = 1, },
+						BlinkInterval = Input { Value = 4.2, },
+						BlinkDuration = Input { Value = 0.16, },
+						DoubleBlink = Input { Value = 0.18, },
+						LidSoftness = Input { Value = 0.055, },
+						LidCurve = Input { Value = 1, },
+						Gaze = Input { Value = { 0.5, 0.5 }, },
+						PeripheralBlur = Input { Value = 0.38, },
+						PeripheralDesat = Input { Value = 0.08, },
+						Vignette = Input { Value = 0.22, },
+						Chromatic = Input { Value = 0.16, },
+						Distortion = Input { Value = 0.022, },
+						Adaptation = Input { Value = 0.045, },
+						Quality = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 0 } },
+				}
+			}
+		}
+	},
+	ActiveTool = "HumanPOVEffect"
+}
+

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Short Drama Traffic Scene Design"
+  short_description: "Design high-retention short-drama ad scenes"
+  default_prompt: "Use $short-drama-traffic-scene-design to turn this premise into a hook-first short-drama traffic scene."

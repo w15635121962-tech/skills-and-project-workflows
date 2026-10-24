@@ -1,0 +1,8 @@
+interface:
+  display_name: "叙事影视简化入口"
+  short_description: "直接编写分组镜头稿，简要核对剧情作用、表演与空间连续性"
+  default_prompt: "使用 $direct-protagonist-scenes 按当前请求直接设计分组镜头稿，核对剧情、原台词和前后接续。"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+policy:
+  allow_implicit_invocation: true

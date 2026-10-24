@@ -1,0 +1,4 @@
+interface:
+  display_name: "Format C V2.5 视频提示词"
+  short_description: "按完整组头和逐镜十一字段编写提示词，强化节奏、演员反应、位置锁定与视线管理"
+  default_prompt: "使用 $short-drama-prompts-v3，按当前Format C V2.5模板将源剧本写成视频提示词，保留原对白和资产，每镜核验位置、支撑及戏内视线。"

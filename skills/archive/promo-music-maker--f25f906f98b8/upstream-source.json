@@ -1,0 +1,31 @@
+{
+  "repository": "https://github.com/kangarooking/promo-creator-skills",
+  "commit": "2d23af9597b2ae37b1e18686f5759eae0c10ac07",
+  "files": {
+    "references/mureka_prompt_guide.md": {
+      "upstream_path": "references/mureka_prompt_guide.md",
+      "sha256": "92e70ce1387c847892809284800cda2ebdd66a7584ee5389da4cc0570bf7c368"
+    },
+    "references/product_promo_bgm_prompting.md": {
+      "upstream_path": "references/product_promo_bgm_prompting.md",
+      "sha256": "90ea562e655158f2bffd274676b94d79d71332d779db5bb7158338d9a312f9f7"
+    },
+    "scripts/mureka.py": {
+      "upstream_path": "scripts/mureka.py",
+      "sha256": "f2ed24b38dab49ce5e23a1cbedb0247192b1e48dae8001ff029e61d023a4df8a"
+    },
+    "LICENSE": {
+      "upstream_path": "LICENSE",
+      "sha256": "e91e981b9112da53851e277230630a5d00dedf41c27154d52c58d4c804cf2036"
+    },
+    "SKILL.md": {
+      "upstream_path": "promo-music-maker/SKILL.md",
+      "sha256": "3576f2c2dea302fe40ae92efb9ff1d9faa3014bb9b8a94c62eaf474a242c2b72"
+    }
+  },
+  "local_additions": [
+    "scripts/analyze_music.py",
+    "references/local-runtime.md"
+  ],
+  "adaptation": "Appended local runtime link to SKILL.md; upstream files and commit hashes retained for provenance."
+}

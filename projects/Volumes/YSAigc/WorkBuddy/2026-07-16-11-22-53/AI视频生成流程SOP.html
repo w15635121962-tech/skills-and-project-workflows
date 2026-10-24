@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 视频生成流程 SOP</title>
+<style>
+  :root {
+    --bg: #0d0d0f;
+    --surface: #1a1a1e;
+    --surface2: #232328;
+    --border: #333338;
+    --text: #e8e8ec;
+    --text2: #a0a0a8;
+    --text3: #6a6a72;
+    --purple: #7F77DD;
+    --purple-d: #534AB7;
+    --teal: #1D9E75;
+    --teal-d: #0F6E56;
+    --coral: #D85A30;
+    --coral-d: #993C1D;
+    --green: #639922;
+    --green-d: #3B6D11;
+    --pink: #D4537E;
+    --pink-d: #993556;
+    --blue: #378ADD;
+    --blue-d: #185FA5;
+    --radius: 10px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "SF Pro Display", "Helvetica Neue", sans-serif;
+    line-height: 1.7;
+    padding: 0;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  h1 {
+    font-size: 28px; font-weight: 600; margin-bottom: 8px;
+    background: linear-gradient(135deg, #7F77DD, #D4537E);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .subtitle { color: var(--text3); font-size: 14px; margin-bottom: 32px; }
+
+  .phase-nav {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;
+    position: sticky; top: 0; background: var(--bg); padding: 12px 0; z-index: 10;
+    border-bottom: 1px solid var(--border);
+  }
+  .phase-nav button {
+    background: var(--surface); border: 1px solid var(--border); color: var(--text2);
+    padding: 6px 14px; border-radius: 20px; font-size: 12px; cursor: pointer;
+    transition: all 0.2s; font-family: inherit;
+  }
+  .phase-nav button:hover { border-color: var(--purple); color: var(--text); }
+  .phase-nav button.active { background: var(--purple-d); color: #fff; border-color: var(--purple-d); }
+
+  .phase {
+    display: none; animation: fadeIn 0.3s ease;
+  }
+  .phase.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .phase-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+  }
+  .phase-badge {
+    width: 36px; height: 36px; border-radius: 8px; display: flex;
+    align-items: center; justify-content: center; font-weight: 600; font-size: 14px;
+    flex-shrink: 0;
+  }
+  .phase-title { font-size: 20px; font-weight: 600; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px 24px; margin-bottom: 16px;
+  }
+  .card h3 { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: var(--text); }
+  .card p { font-size: 14px; color: var(--text2); margin-bottom: 8px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  .rule-box {
+    background: var(--surface2); border-left: 3px solid var(--coral);
+    border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 12px 0;
+    font-size: 14px; color: var(--text);
+  }
+  .rule-box .label { color: var(--coral); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .code-block {
+    background: #0a0a0c; border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px; margin: 12px 0; font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 13px; color: #c0c0c8; overflow-x: auto; white-space: pre; line-height: 1.5;
+  }
+  .code-block .kw { color: var(--purple); }
+  .code-block .str { color: var(--teal); }
+  .code-block .cmt { color: var(--text3); }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th { text-align: left; padding: 8px 12px; background: var(--surface2); color: var(--text2);
+       font-weight: 500; border-bottom: 1px solid var(--border); font-size: 12px; }
+  td { padding: 8px 12px; border-bottom: 1px solid var(--border); color: var(--text2); }
+  tr:last-child td { border-bottom: none; }
+
+  .checklist { list-style: none; }
+  .checklist li {
+    padding: 6px 0 6px 28px; position: relative; font-size: 14px; color: var(--text2);
+  }
+  .checklist li::before {
+    content: "[]"; position: absolute; left: 0; color: var(--teal); font-family: monospace;
+  }
+
+  .flow-arrow {
+    text-align: center; color: var(--text3); font-size: 20px; margin: 4px 0;
+  }
+
+  .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 11px; font-weight: 500; margin-right: 4px;
+  }
+  .tag-en { background: rgba(55,138,221,0.15); color: var(--blue); }
+  .tag-cn { background: rgba(127,119,221,0.15); color: var(--purple); }
+  .tag-warn { background: rgba(216,90,48,0.15); color: var(--coral); }
+  .tag-ok { background: rgba(29,158,117,0.15); color: var(--teal); }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .compare .col { background: var(--surface2); border-radius: 8px; padding: 14px; }
+  .compare .col h4 { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+  .compare .bad h4 { color: var(--coral); }
+  .compare .good h4 { color: var(--teal); }
+  .compare .col p { font-size: 13px; color: var(--text2); }
+
+  .quick-rules {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px 24px; margin-bottom: 24px;
+  }
+  .quick-rules h2 { font-size: 16px; font-weight: 600; margin-bottom: 14px; }
+  .quick-rules table th { background: transparent; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>AI 视频生成流程 SOP</h1>
+  <p class="subtitle">v1.0 | 2026-07-16 | 推文短视频 AI 生成全流程</p>
+
+  <div class="phase-nav">
+    <button class="active" onclick="showPhase(0)">总览</button>
+    <button onclick="showPhase(1)">P1 推文创作</button>
+    <button onclick="showPhase(2)">P2 英文分镜</button>
+    <button onclick="showPhase(3)">P3 旁白台词</button>
+    <button onclick="showPhase(4)">P4 达芬奇修音</button>
+    <button onclick="showPhase(5)">P5 抽卡提示词</button>
+    <button onclick="showPhase(6)">P6 画面配图</button>
+    <button onclick="showPhase(7)">速查表</button>
+  </div>
+
+  <!-- 总览 -->
+  <div class="phase active" id="phase-0">
+    <div class="card">
+      <h3>流程总览</h3>
+      <p><span class="tag tag-cn">中文</span>推文创作（周更）→ 中文剧本（仅参考）</p>
+      <div class="flow-arrow">↓</div>
+      <p><span class="tag tag-en">英文</span>英文分镜制作 ← 旁白拆分到反应中</p>
+      <div class="flow-arrow">↓</div>
+      <p><span class="tag tag-ok">生成</span>台词 + 旁白一次性生成（不加他人反应）</p>
+      <div class="flow-arrow">↓</div>
+      <p><span class="tag tag-warn">修音</span>达芬奇修音（DaVinci Resolve）</p>
+      <div class="flow-arrow">↓</div>
+      <p><span class="tag tag-en">英文</span>抽卡提示词生成（AI 固定格式）</p>
+      <div class="flow-arrow">↓</div>
+      <p><span class="tag tag-warn">视觉</span>画面配图（想象力 + 欧美审美 + 擦边 + 强冲突）</p>
+      <div class="flow-arrow">↓</div>
+      <p><span class="tag tag-ok">输出</span>成片（MP4 竖版 9:16）</p>
+    </div>
+    <div class="card">
+      <h3>核心原则</h3>
+      <p>- 中文剧本 <strong>只做参考</strong>，不直接用于 AI 生成</p>
+      <p>- 分镜、提示词一律使用 <strong>英文</strong> 输出</p>
+      <p>- 旁白与台词 <strong>独立生成</strong>，不混入他人反应</p>
+      <p>- 抽卡提示词走 <strong>AI 固定格式</strong>，保证一致性</p>
+      <p>- 画面风格偏 <strong>欧美审美</strong>，适当擦边，矛盾冲突要强</p>
+    </div>
+  </div>
+
+  <!-- Phase 1 -->
+  <div class="phase" id="phase-1">
+    <div class="phase-header">
+      <div class="phase-badge" style="background:#26215C;color:#CECBF6">P1</div>
+      <div class="phase-title">推文创作与剧本准备</div>
+    </div>
+    <div class="card">
+      <h3>推文创作</h3>
+      <table>
+        <tr><th>项目</th><th>要求</th></tr>
+        <tr><td>频率</td><td>一周一篇推文</td></tr>
+        <tr><td>语言</td><td>中文（作为参考剧本素材）</td></tr>
+        <tr><td>核心驱动</td><td>矛盾冲突要强</td></tr>
+        <tr><td>风格倾向</td><td>擦边元素（欧美受众较受欢迎）</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>创作要点</h3>
+      <p>- 开头 3 秒制造钩子（hook），让观众停不下来</p>
+      <p>- 每段推文内含一个冲突点或反转点</p>
+      <p>- 角色之间要有明确的对立关系</p>
+      <p>- 适当加入擦边/暧昧元素，提升完播率</p>
+      <p>- 可用 AI 辅助：直接问 AI 欧美观众喜欢什么样的故事/冲突/角色关系</p>
+    </div>
+    <div class="card">
+      <h3>中文剧本定位</h3>
+      <div class="rule-box">
+        <span class="label">核心规则</span><br>
+        中文剧本 = 参考素材 ≠ 直接投入生成
+      </div>
+      <p>- 中文剧本用于：理清故事线、角色关系、情绪节奏</p>
+      <p>- 中文剧本 <strong>不用于</strong>：直接喂给 AI 抽卡工具</p>
+      <p>- 后续所有 AI 生成环节均基于 <strong>英文分镜</strong></p>
+    </div>
+    <div class="card">
+      <h3>欧美审美参考（AI 辅助提示词）</h3>
+      <div class="code-block"><span class="cmt"># 问 AI 欧美受众偏好</span>
+What types of conflicts and storylines are popular
+with Western/European audiences on social media
+short videos?
+
+What character dynamics create the strongest
+engagement in vertical short-form content?
+
+What borderline/edgy content themes perform well
+without violating platform guidelines?</div>
+    </div>
+  </div>
+
+  <!-- Phase 2 -->
+  <div class="phase" id="phase-2">
+    <div class="phase-header">
+      <div class="phase-badge" style="background:#042C53;color:#B5D4F4">P2</div>
+      <div class="phase-title">英文分镜制作</div>
+    </div>
+    <div class="card">
+      <h3>为什么用英文</h3>
+      <table>
+        <tr><th>维度</th><th>英文优势</th></tr>
+        <tr><td>AI 工具兼容性</td><td>主流 AI 工具对英文提示词理解最精准</td></tr>
+        <tr><td>提示词生态</td><td>英文 Lora、Embedding、风格词库更丰富</td></tr>
+        <tr><td>画面描述精度</td><td>英文空间/光影/材质描述词更成熟</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>分镜制作流程</h3>
+      <p>1. 通读中文剧本，提取每场戏的核心叙事 beats</p>
+      <p>2. 将每个 beat 翻译/改写为英文画面描述</p>
+      <p>3. 按镜头拆分，每个镜头包含：</p>
+      <p style="padding-left:20px">镜号 / 景别 / 画面描述 / 角色动作 / 台词 / 旁白</p>
+      <p>4. 旁白处理：将旁白拆分到对应镜头的角色反应中</p>
+    </div>
+    <div class="card">
+      <h3>分镜表格模板</h3>
+      <div style="overflow-x:auto">
+      <table>
+        <tr><th>Shot</th><th>Scene</th><th>Type</th><th>Visual</th><th>Action</th><th>Dialogue</th><th>Narration</th></tr>
+        <tr><td>01</td><td>Opening</td><td>CU</td><td>Dark room, single light</td><td>Looks up</td><td>"What do you want?"</td><td>—</td></tr>
+        <tr><td>02</td><td>Opening</td><td>MS</td><td>Two figures facing off</td><td>B steps forward</td><td>—</td><td>He knew this moment would come.</td></tr>
+        <tr><td>03</td><td>Opening</td><td>CU</td><td>A's eyes narrow</td><td>Clenches fist</td><td>"You don't belong here."</td><td>—</td></tr>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 3 -->
+  <div class="phase" id="phase-3">
+    <div class="phase-header">
+      <div class="phase-badge" style="background:#085041;color:#9FE1CB">P3</div>
+      <div class="phase-title">旁白与台词规范</div>
+    </div>
+    <div class="card">
+      <div class="rule-box">
+        <span class="label">核心规则 1</span><br>
+        做台词和旁白时，<strong>不加别人的反应</strong>。<br>
+        每个文本块保持单一来源、单一视角。
+      </div>
+      <div class="compare">
+        <div class="col bad">
+          <h4>错误示例</h4>
+          <p>Dialogue (A): "You don't belong here." <strong style="color:var(--coral)">B frowned.</strong></p>
+          <p>Narration: He knew this moment would come. <strong style="color:var(--coral)">A turned away.</strong></p>
+          <p style="color:var(--coral);font-size:12px;margin-top:8px">混入了他人反应</p>
+        </div>
+        <div class="col good">
+          <h4>正确示例</h4>
+          <p>Dialogue (A): "You don't belong here."</p>
+          <p>Narration: He knew this moment would come.</p>
+          <p>Action: A clenches fist.</p>
+          <p style="color:var(--teal);font-size:12px;margin-top:8px">动作独立，不混入台词</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="rule-box" style="border-left-color:var(--blue)">
+        <span class="label" style="color:var(--blue)">核心规则 2</span><br>
+        在拆分镜时，<strong>旁白也要加入到反应中</strong>。<br>
+        旁白作为角色反应的一部分嵌入镜头。
+      </div>
+      <p>拆分逻辑：镜头 → 角色反应 = 动作 + 表情 + 旁白（内心独白/画外音）</p>
+    </div>
+    <div class="card">
+      <div class="rule-box" style="border-left-color:var(--teal)">
+        <span class="label" style="color:var(--teal)">核心规则 3</span><br>
+        生成时<strong>连旁白一起生成出来</strong>。<br>
+        台词和旁白一次性生成，不分两轮。
+      </div>
+      <h3 style="margin-top:16px">一次性生成输出格式</h3>
+      <div class="code-block">[Shot 03]
+DIALOGUE: "You don't belong here."
+NARRATION: He knew this moment would come.
+ACTION: A clenches fist, jaw tight.</div>
+      <p style="color:var(--teal);font-size:13px">生成完成后，直接进入达芬奇修音环节</p>
+    </div>
+  </div>
+
+  <!-- Phase 4 -->
+  <div class="phase" id="phase-4">
+    <div class="phase-header">
+      <div class="phase-badge" style="background:#4A1B0C;color:#F5C4B3">P4</div>
+      <div class="phase-title">达芬奇修音</div>
+    </div>
+    <div class="card">
+      <h3>前置条件</h3>
+      <p>- Phase 3 的台词+旁白已一次性生成完毕</p>
+      <p>- 音频文件已录制/生成</p>
+    </div>
+    <div class="card">
+      <h3>修音流程（DaVinci Resolve）</h3>
+      <table>
+        <tr><th>步骤</th><th>操作</th><th>说明</th></tr>
+        <tr><td>1. 导入</td><td>将台词+旁白音频导入</td><td>可同轨或分轨</td></tr>
+        <tr><td>2. 降噪</td><td>Fairlight 页面，噪声门/降噪插件</td><td>去除底噪</td></tr>
+        <tr><td>3. EQ</td><td>提升 2-5kHz 增强清晰度</td><td>人声频段</td></tr>
+        <tr><td>4. 压缩</td><td>控制动态范围</td><td>台词音量稳定</td></tr>
+        <tr><td>5. 响度标准化</td><td>统一到 -16 LUFS</td><td>社交媒体标准</td></tr>
+        <tr><td>6. 导出</td><td>导出修音后音频轨</td><td>WAV/MP3</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>注意事项</h3>
+      <p>- 旁白和台词可同轨处理，也可分轨</p>
+      <p>- 分轨时：台词轨和旁白轨分别处理，最后混音</p>
+      <p>- 修音完成后，音频即可用于最终成片合成</p>
+    </div>
+  </div>
+
+  <!-- Phase 5 -->
+  <div class="phase" id="phase-5">
+    <div class="phase-header">
+      <div class="phase-badge" style="background:#173404;color:#C0DD97">P5</div>
+      <div class="phase-title">抽卡提示词生成</div>
+    </div>
+    <div class="card">
+      <div class="rule-box" style="border-left-color:var(--green)">
+        <span class="label" style="color:var(--green)">原则</span><br>
+        根据做好的分镜去生成提示词，用 AI 做<strong>固定格式</strong>输出。
+      </div>
+      <p>- 提示词 <strong>基于分镜</strong>，不凭空生成</p>
+      <p>- 使用 AI 工具，指定固定输出格式</p>
+      <p>- 每个镜头对应一组提示词</p>
+    </div>
+    <div class="card">
+      <h3>AI 固定格式输出模板</h3>
+      <div class="code-block"><span class="cmt"># 发给 AI 的指令</span>
+You are a prompt engineer for AI image/video
+generation. Based on the storyboard below,
+generate prompts in this EXACT format per shot.
+
+OUTPUT FORMAT (per shot):
+---
+SHOT: <span class="kw">[shot number]</span>
+POSITIVE: <span class="kw">[subject]</span>, <span class="kw">[action]</span>,
+  <span class="kw">[environment]</span>, <span class="kw">[lighting]</span>,
+  <span class="kw">[camera]</span>, <span class="kw">[style]</span>, <span class="kw">[quality]</span>
+NEGATIVE: <span class="kw">[standard negatives]</span>
+PARAMS: <span class="kw">[generation parameters]</span>
+---
+
+STORYBOARD:
+<span class="cmt">[粘贴英文分镜内容]</span></div>
+    </div>
+    <div class="card">
+      <h3>提示词构成要素</h3>
+      <table>
+        <tr><th>要素</th><th>说明</th><th>示例</th></tr>
+        <tr><td>Subject</td><td>主体描述</td><td>a young woman with dark hair</td></tr>
+        <tr><td>Action/Pose</td><td>动作姿态</td><td>clenching fist, jaw tight</td></tr>
+        <tr><td>Environment</td><td>场景环境</td><td>dimly lit room, single light</td></tr>
+        <tr><td>Lighting</td><td>光照</td><td>dramatic chiaroscuro lighting</td></tr>
+        <tr><td>Camera</td><td>机位/景别</td><td>close-up, eye level</td></tr>
+        <tr><td>Style</td><td>风格修饰</td><td>cinematic, film grain, moody</td></tr>
+        <tr><td>Quality</td><td>质量标签</td><td>highly detailed, 8k, sharp focus</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>示例输出</h3>
+      <div class="code-block">---
+SHOT: 03
+POSITIVE: a young man with sharp features and dark
+eyes, clenching fist with jaw tight, dimly lit
+concrete room with single overhead light, dramatic
+chiaroscuro lighting, extreme close-up shot eye
+level, cinematic film grain moody atmosphere,
+highly detailed 8k sharp focus
+NEGATIVE: blurry, deformed, extra fingers, low
+quality, watermark, text, cartoon
+PARAMS: --ar 9:16 --style raw --v 6
+---</div>
+    </div>
+  </div>
+
+  <!-- Phase 6 -->
+  <div class="phase" id="phase-6">
+    <div class="phase-header">
+      <div class="phase-badge" style="background:#4B1528;color:#F4C0D1">P6</div>
+      <div class="phase-title">画面配图与视觉策略</div>
+    </div>
+    <div class="card">
+      <div class="rule-box" style="border-left-color:var(--pink)">
+        <span class="label" style="color:var(--pink)">核心原则</span><br>
+        在给配画面时，要<strong>发挥想象力</strong>。<br>
+        不要照搬分镜字面描述，要在分镜基础上创意延展。
+      </div>
+    </div>
+    <div class="card">
+      <h3>擦边策略</h3>
+      <p>- 适度擦边：利用服装、姿态、光影暗示，不越过平台红线</p>
+      <p>- 擦边元素服务于叙事，不为了擦边而擦边</p>
+      <p>- 欧美受众对擦边接受度较高，但仍需注意平台规则</p>
+    </div>
+    <div class="card">
+      <h3>矛盾冲突视觉化</h3>
+      <table>
+        <tr><th>手法</th><th>表现方式</th></tr>
+        <tr><td>空间关系</td><td>两人对峙、背向、逼近</td></tr>
+        <tr><td>光影对比</td><td>明暗分割、硬阴影</td></tr>
+        <tr><td>构图张力</td><td>倾斜构图、极端景别</td></tr>
+        <tr><td>色彩对立</td><td>暖色 vs 冷色</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>配画面检查清单</h3>
+      <ul class="checklist">
+        <li>画面是否比文字描述更有想象力？</li>
+        <li>矛盾冲突是否在视觉上一目了然？</li>
+        <li>擦边元素是否适度且服务叙事？</li>
+        <li>风格是否符合欧美审美偏好？</li>
+        <li>镜头之间是否有视觉连贯性？</li>
+        <li>是否有足够的视觉钩子（前3帧抓住注意力）？</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 速查表 -->
+  <div class="phase" id="phase-7">
+    <div class="quick-rules">
+      <h2>关键规则速查表</h2>
+      <table>
+        <tr><th>规则</th><th>说明</th></tr>
+        <tr><td>中文剧本只做参考</td><td>不直接用于 AI 生成</td></tr>
+        <tr><td>分镜用英文</td><td>所有 AI 生成环节基于英文</td></tr>
+        <tr><td>旁白拆分到反应中</td><td>旁白作为角色反应的一部分嵌入镜头</td></tr>
+        <tr><td>台词旁白不加他人反应</td><td>每个文本块保持单一来源单一视角</td></tr>
+        <tr><td>生成时连旁白一起</td><td>台词+旁白一次性生成</td></tr>
+        <tr><td>生成后进达芬奇修音</td><td>修音环节紧跟生成</td></tr>
+        <tr><td>抽卡基于分镜</td><td>提示词从分镜推导，不凭空生成</td></tr>
+        <tr><td>提示词固定格式</td><td>AI 输出统一格式，保证一致性</td></tr>
+        <tr><td>推文一周一篇</td><td>保持周更节奏</td></tr>
+        <tr><td>配画面发挥想象力</td><td>在分镜基础上创意延展</td></tr>
+        <tr><td>欧美审美</td><td>适当擦边，矛盾冲突要强</td></tr>
+      </table>
+    </div>
+    <div class="quick-rules">
+      <h2>各阶段交付物清单</h2>
+      <table>
+        <tr><th>阶段</th><th>交付物</th><th>格式</th></tr>
+        <tr><td>Phase 1</td><td>中文推文剧本</td><td>文本</td></tr>
+        <tr><td>Phase 2</td><td>英文分镜表</td><td>表格</td></tr>
+        <tr><td>Phase 3</td><td>台词+旁白生成稿</td><td>文本（DIALOGUE/NARRATION/ACTION）</td></tr>
+        <tr><td>Phase 4</td><td>修音音频文件</td><td>WAV/MP3</td></tr>
+        <tr><td>Phase 5</td><td>抽卡提示词集</td><td>文本（POSITIVE/NEGATIVE/PARAMS）</td></tr>
+        <tr><td>Phase 6</td><td>画面素材</td><td>图片/视频</td></tr>
+        <tr><td>最终</td><td>成片</td><td>MP4（竖版 9:16）</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showPhase(idx) {
+    document.querySelectorAll('.phase').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.phase-nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById('phase-' + idx).classList.add('active');
+    document.querySelectorAll('.phase-nav button')[idx].classList.add('active');
+  }
+</script>
+</body>
+</html>

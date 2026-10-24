@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "project": {"name": null, "root": null, "version": null, "language": null},
+  "sources": {"script": null, "script_revision": null, "replication_source": null, "approved_prompt_revision": null},
+  "targets": {"episodes": [], "platform_project_id": null, "series": [], "resolve_project": null, "timelines": []},
+  "visual": {"aspect_ratio": "9:16", "prompt_format": "chinese-eight-fields-plus-audio", "frame_rate": null, "motion_requirement": null},
+  "assets": {"roles": [], "scenes": [], "props": [], "outfit_description_policy": "use-assets-when-requested-preserve-actions"},
+  "scene_continuity": [],
+  "sound": {"original_dialogue": "preserve-source-language", "narration_in_video_prompts": null, "bgm_in_generated_video": null, "normal_breathing": true, "character_voices": [], "narration_voice": null},
+  "narration": {"natural_speed_percent": 100, "alignment_strategy": null, "filename_prefix": null, "filename_pattern": "{prefix}{episode:02}-{shot:02}-{take:02}.{extension}", "output_root": null},
+  "edit": {"picture_and_sync_audio_together": true, "backup_before_structural_changes": true, "test_timeline": null, "program_timeline": null, "source_to_timeline_map": null},
+  "subtitles": {"format": "SRT", "max_lines_per_cue": 3, "track_name_pattern": "{episode}", "timecode_basis": null, "timeline_start_timecode": null, "native_track_required": true, "preset_exact_name": null, "preset_type": null, "scope": null},
+  "platform": {"model": null, "resolution": null, "observed_max_seconds": null, "observed_text_limit": null, "settings_checked_at": null},
+  "music": {"license_source": null, "allowed_uses": null, "attribution": null},
+  "delivery": {"export_spec": null, "output_root": null, "adoption_manifest": null},
+  "notes": ["配置记录参数，不提供外部操作或付费授权。", "空值为未确认；只补本次阶段所需字段。", "复制到其他项目后重新核对人物、音色、路径、站位、预设、时基和平台限制。", "100%与三行是可覆盖偏好，不覆盖当前用户明确要求。"]
+}

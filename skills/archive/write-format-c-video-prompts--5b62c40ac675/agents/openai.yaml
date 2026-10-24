@@ -1,0 +1,4 @@
+interface:
+  display_name: "Format C 视频提示词 V2.6"
+  short_description: "将剧本转换为前置约束、节奏强化与视线受控的完整 Format C 提示词"
+  default_prompt: "使用 $write-format-c-video-prompts 将我提供的剧本转换为完整的中文 Format C V2.6 视频提示词。"

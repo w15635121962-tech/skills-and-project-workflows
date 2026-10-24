@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/Fation-Ren/news-to-video",
+  "commit": "cdc5f1e1bfaad26ded13d88cbfec3f0c5f58dce7",
+  "upstream_path": "pixabay-music-download/SKILL.md",
+  "original_sha256": "8c7ccf05ea418487a3efe53d8fb905148a4cdd9cf7242e6661532c7e1b3e543c",
+  "adaptation": "Moved compatibility into metadata; updated browser examples to a named OpenCLI 1.8.8 session; added local setup and DaVinci handoff notes. Original retained in SKILL.upstream.txt."
+}

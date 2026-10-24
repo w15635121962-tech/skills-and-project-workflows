@@ -1,0 +1,4 @@
+interface:
+  display_name: "短剧分镜设计"
+  short_description: "按剧本事实生成可剪辑的短剧分镜与自检结果"
+  default_prompt: "使用 $short-drama-storyboarding 读取当前剧本，先锁定人物、场景、道具和情绪任务，再输出分组分镜、挂载关系、提示词和自检。"

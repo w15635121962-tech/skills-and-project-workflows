@@ -1,0 +1,4 @@
+interface:
+  display_name: "短剧视频提示词导演"
+  short_description: "按格式C生成连续、稳定、可直接投喂的视频分镜提示词"
+  default_prompt: "Use $short-drama-video-prompts to turn this script beat into a Format C video-prompt group."

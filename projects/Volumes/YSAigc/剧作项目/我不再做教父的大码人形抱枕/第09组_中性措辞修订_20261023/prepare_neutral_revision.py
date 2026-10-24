@@ -1,0 +1,106 @@
+import copy
+import json
+import re
+from pathlib import Path
+
+ROOT = Path('/Volumes/YSAigc/\u5267\u4f5c\u9879\u76ee/\u6211\u4e0d\u518d\u505a\u6559\u7236\u7684\u5927\u7801\u4eba\u5f62\u62b1\u6795')
+AUTH = ROOT / '\u590d\u523b\u5168\u96c6_FormatC_V25_20261022'
+TASK = ROOT / '\u7b2c09\u7ec4_\u4e2d\u6027\u63aa\u8f9e\u4fee\u8ba2_20261023'
+base = json.loads((AUTH / '\u590d\u523b\u5168\u96c6_FormatC_V25_\u5168\u90e8\u63d0\u793a\u8bcd.json').read_text())
+draft = copy.deepcopy(base)
+g = next(x for x in draft['groups'] if x['timeline_position'] == 9)
+live = json.loads((TASK / '\u4fee\u6539\u524d_\u7b2c09\u7ec4\u5e73\u53f0.json').read_text())
+norm = lambda s: re.sub(r'\s+', '', s)
+plain = lambda s: re.sub(r'\xa7ASSET:([^\xa7]+)\xa7', r'\1', s)
+assert norm(live['text']) == norm(plain(g['prompt']).replace('\u6216\u88f8\u9732\u3002', '\u6216\u3002'))
+for suffix in ['json', 'md']:
+    n = '\u590d\u523b\u5168\u96c6_FormatC_V25_\u5168\u90e8\u63d0\u793a\u8bcd.' + suffix
+    (TASK / ('\u4fee\u6539\u524d_' + n)).write_bytes((AUTH / n).read_bytes())
+source = g['prompt'].replace('\u6216\u88f8\u9732\u3002', '\u6216\u3002')
+source_lines = source.splitlines()
+
+replacements = [
+    ('\u4e0d\u65b0\u589e\u52a8\u4f5c\u6216\u4e3b\u52a8\u4eb2\u543b', '\u4ec5\u6267\u884c\u672c\u7ec4\u660e\u786e\u5217\u51fa\u7684\u52a8\u4f5c'),
+    ('\u5973\u4e3b\u773c\u5507\u95f4\u7684\u672a\u8bbe\u9632', '\u5973\u4e3b\u53e5\u540e\u7684\u9762\u90e8\u53d8\u5316'),
+    ('\u773c\u5507', '\u9762\u90e8'),
+    ('\u8fd1\u666f\u53d6\u5934\u9876\u81f3\u4e0a\u80f8', '\u8fd1\u666f\u53d6\u5934\u9876\u81f3\u80a9\u7ebf\u4e0b\u65b9\u5c11\u8bb8'),
+    ('\u6d41\u9732\u534a\u68a6\u534a\u9192\u91cc\u672a\u8bbe\u9632\u7684\u5438\u5f15\u529b', '\u5448\u73b0\u534a\u68a6\u534a\u9192\u65f6\u81ea\u7136\u653e\u677e\u7684\u72b6\u6001'),
+    ('\u4e0d\u52a0\u6e7f\u4eae\u5507\u6cb9\u6548\u679c', '\u5c40\u90e8\u53cd\u5149\u81ea\u7136\u514b\u5236'),
+    ('\u4e0d\u52a0\u5165\u547b\u541f\u3001\u5598\u606f\u8868\u6f14\u6216\u65b0\u8bcd', '\u4ec5\u4f7f\u7528\u539f\u53e5\u5bf9\u767d\u4e0e\u81ea\u7136\u547c\u5438'),
+    ('\u4e0d\u5750\u8d77\u3001\u7ffb\u538b\u6216\u4eb2\u543b', '\u4fdd\u6301\u4fa7\u5367\u548c\u539f\u6709\u627f\u6258\uff0c\u4e0d\u65b0\u589e\u8eab\u4f53\u52a8\u4f5c'),
+    ('\u4e0d\u53e6\u6f14\u4e00\u6b21\u8bf4\u8bdd\u6216\u4eb2\u543b', '\u4e0d\u91cd\u65b0\u5f00\u53e3\uff0c\u4fdd\u6301\u4e24\u4eba\u73b0\u6709\u9762\u90e8\u95f4\u8ddd'),
+    ('\u4e0d\u5e26\u51fa\u80f8\u90e8\u6216\u8170\u90e8', '\u753b\u5e45\u53ea\u4fdd\u7559\u9762\u90e8\u7ec6\u8282'),
+    ('\u5507\u90e8\u4e0d\u989d\u5916\u589e\u4eae\u3001\u589e\u539a\u6216\u8986\u4e0a\u5938\u5f20\u6e7f\u5149', '\u9762\u90e8\u6bd4\u4f8b\u4fdd\u6301\u8d44\u4ea7\u4e00\u81f4\uff0c\u5c40\u90e8\u53cd\u5149\u81ea\u7136\u514b\u5236'),
+    ('\u80cc\u62b1\u3001\u7ffb\u538b\u3001\u4e3b\u52a8\u543b\u3001', '\u59ff\u6001\u504f\u79bb\u3001\u589e\u52a0\u672a\u6307\u5b9a\u63a5\u89e6\u52a8\u4f5c\u3001'),
+    ('\u4e0d\u8ffd\u543b', '\u4fdd\u6301\u65e2\u5b9a\u9762\u90e8\u95f4\u8ddd'),
+]
+new_lines = []
+shot = 0
+patches = []
+for old in source_lines:
+    m = re.match(r'\u3010shot (\d+)', old)
+    if m:
+        shot = int(m.group(1))
+    new = old
+    for a, b in replacements:
+        new = new.replace(a, b)
+    if old.startswith('\u8282\u594f\u7ed3\u6784'):
+        new = (
+            '\u8282\u594f\u7ed3\u6784\uff08Beat Structure\uff09\uff1a\u7ec4\u578b\uff1a\u60c5\u7eea\u7ec4\u542b\u539f\u6709\u5bf9\u767d\uff5c3\u955c\uff5c\u517110.0s\uff1b'
+            '\u4fdd\u75594.0 / 2.0 / 4.0\u79d2\u4e0e\u552f\u4e00\u4e00\u53e5\u539f\u82f1\u6587\u5bf9\u767d\uff0c\u4e0d\u52a0\u901f\u3001\u4e0d\u91cd\u8bf4\u3002'
+            '\u5973\u4e3b\u8bf4\u8bdd\u8fd1\u666f4\u79d2 \u2192 \u5973\u4e3b\u9762\u90e8\u7ec6\u8282\u7279\u51992\u79d2 \u2192 \u7537\u4e3b\u4e13\u6ce8\u8868\u60c5\u7279\u51994\u79d2\uff1b\u6700\u5f3a\u62cdshot 3\u3002'
+            '\u5973\u4e3b\u5e26\u56f0\u610f\u81ea\u7136\u56de\u7b54\uff0c\u53e5\u540e\u6162\u6162\u6536\u56de\u53e3\u578b\u3001\u5408\u4e0a\u773c\u7751\uff1b\u7537\u4e3b\u7ee7\u7eed\u770b\u5979\uff0c\u773c\u7751\u4e0e\u4e0b\u988c\u9010\u6e10\u653e\u677e\u3002'
+            '\u4e24\u4eba\u5634\u89d2\u4fdd\u6301\u81ea\u7136\u5e73\u76f4\uff0c\u8863\u7269\u7ee7\u7eed\u4fdd\u6301\u8d44\u4ea7\u4e2d\u7684\u6263\u5408\u4e0e\u906e\u76d6\u3002'
+            '\u7537\u4e3b\u4ecd\u8eba\u7740\uff0c\u5148\u7ed9\u76ee\u5149\u505c\u7559\uff0c\u518d\u7f13\u6162\u6062\u590d\u5230\u5979\u5de6\u53d1\u9645\u7684\u5c0f\u95f4\u8ddd\uff1b'
+            '\u4e0d\u63d0\u524d\u6f14\u4e0b\u4e00\u7ec4\u7684\u8033\u540e\u81f3\u9888\u4fa7\u4e0b\u79fb\u3002'
+        )
+    if shot == 2 and old.startswith('\u5fae\u8868\u6f14'):
+        new = (
+            '\u5fae\u8868\u6f14\uff08Micro-Performance\uff09\uff1a\u53ef\u89c1\u5507\u7ebf\u968f\u53e5\u5c3e\u7531\u5fae\u5206\u56de\u5230\u81ea\u7136\u95ed\u5408\uff0c\u5634\u89d2\u4fdd\u6301\u5e73\u76f4\uff0c'
+            '\u4e0b\u988c\u808c\u8089\u677e\u4e0b\u6765\uff1b\u4e0a\u773c\u7751\u6162\u6162\u843d\u4e0b\uff0c\u8868\u60c5\u81ea\u7136\u3001\u56f0\u5026\u3002'
+            '\u53e3\u578b\u7ed3\u675f\u540e\u4fdd\u6301\u5b89\u9759\uff0c\u9762\u90e8\u52a8\u4f5c\u53ea\u6709\u8fd9\u4e00\u6b21\u7ec6\u5fae\u53d8\u5316\u3002'
+        )
+    if shot == 3 and old.startswith('\u5fae\u8868\u6f14'):
+        new = (
+            '\u5fae\u8868\u6f14\uff08Micro-Performance\uff09\uff1aMatteo\u770b\u5979\u7684\u65f6\u95f4\u6bd4\u5e73\u5e38\u7a0d\u957f\uff0c\u4e0b\u773c\u7751\u7684\u7d27\u7ef7\u7f13\u7f13\u677e\u5f00\uff0c'
+            '\u4e0b\u988c\u8f7b\u5378\u529b\uff0c\u95ed\u5408\u7684\u5507\u7ebf\u53d8\u5f97\u67d4\u548c\uff1b\u89c6\u7ebf\u79fb\u5230\u5979\u95ed\u7740\u7684\u773c\u775b\u65f6\u505c\u534a\u62cd\uff0c\u518d\u6162\u6162\u56de\u5230\u5de6\u53d1\u9645\u3002'
+            '\u773c\u7751\u4e0e\u4e0b\u988c\u4ec5\u4f5c\u7ec6\u5fae\u653e\u677e\uff0c\u6ce8\u610f\u529b\u96c6\u4e2d\u8868\u73b0\u4e3a\u89c6\u7ebf\u505c\u7559\u548c\u53cd\u5e94\u7a0d\u6162\u3002'
+            '\u5973\u4e3b\u753b\u5916\u7ee7\u7eed\u56f0\u5026\u95ed\u773c\uff0c\u4fdd\u6301\u65e2\u5b9a\u72b6\u6001\u3002'
+        )
+    if old != new:
+        assert '\xa7ASSET:' not in old
+        patches.append({'position': 9, 'shot': shot, 'old': old, 'new': new})
+    new_lines.append(new)
+
+g['prompt'] = '\n'.join(new_lines)
+g['revision'] = 'format-c-v2.5_group09_neutral_wording_20261023'
+g['neutral_wording_revision'] = {
+    'scope': '\u4ec5\u7b2c9\u7ec4\u8868\u6f14\u6807\u7b7e\u4e0e\u76f8\u5173\u5426\u5b9a\u53e5\u4e2d\u6027\u5316',
+    'failure_evidence': '\u5e73\u53f0\u901a\u7528\u63d0\u793a\u8bcd\u5185\u5bb9\u5b89\u5168\u5ba1\u67e5\u672a\u901a\u8fc7\uff0c\u672a\u63d0\u4f9b\u5177\u4f53\u89e6\u53d1\u8bcd',
+    'note': '\u4e0d\u58f0\u660e\u5177\u4f53\u8bcd\u4e3a\u786e\u5b9a\u539f\u56e0\uff1b\u4fdd\u5b58\u4fee\u6539\u4e0d\u7b49\u4e8e\u5ba1\u6838\u901a\u8fc7\uff0c\u672a\u91cd\u65b0\u63d0\u4ea4\u751f\u6210\u3002'
+}
+for s in g['shots']:
+    for key, val in list(s.items()):
+        if isinstance(val, str):
+            s[key] = val.replace('\u773c\u5507', '\u9762\u90e8').replace('\u6c89\u8ff7', '\u4e13\u6ce8')
+g['native_asset_status'] = 'pending_live_reopen_verification'
+draft['authority_revision'] = 'group09_neutral_wording_after_review_failure'
+draft['group09_neutral_wording_report'] = str(TASK / '\u5b8c\u6210\u6838\u9a8c.json')
+
+old_g = next(x for x in base['groups'] if x['timeline_position'] == 9)
+assert g['duration'] == old_g['duration'] == 10
+assert g['dialogue_lines'] == old_g['dialogue_lines']
+assert re.findall(r'\{([^{}]+)\}', g['prompt']) == ['I just washed the bedding today.']
+assert re.findall(r'\xa7ASSET:([^\xa7]+)\xa7', g['prompt']) == re.findall(r'\xa7ASSET:([^\xa7]+)\xa7', old_g['prompt'])
+assert re.findall(r'duration: ([\d.]+)s', g['prompt']) == ['4.0', '2.0', '4.0']
+for prefix in ['\u56fa\u5b9a\u753b\u8d28\u8bcd', '\u5f3a\u5236\u8981\u6c42\uff1a', '\u5149\u5f71\u57fa\u8c03']:
+    assert next(x for x in g['prompt'].splitlines() if x.startswith(prefix)) == next(x for x in old_g['prompt'].splitlines() if x.startswith(prefix))
+for word in ['\u6027\u611f', '\u52fe\u5f15', '\u88f8\u9732', '\u547b\u541f', '\u5598\u606f\u8868\u6f14', '\u8214\u5507', '\u54ac\u5507', '\u6311\u9017', '\u5782\u6d8e', '\u4eb2\u543b', '\u8ffd\u543b', '\u4e3b\u52a8\u543b', '\u7ffb\u538b', '\u5a9a\u773c']:
+    assert word not in g['prompt'], word
+for a, b in zip(base['groups'], draft['groups']):
+    if a['timeline_position'] != 9:
+        assert a == b
+(TASK / '\u7b2c09\u7ec4_\u4e2d\u6027\u63aa\u8f9e\u7cbe\u786e\u8865\u4e01.json').write_text(json.dumps(patches, ensure_ascii=False, indent=2))
+(TASK / '\u7b2c09\u7ec4_\u4e2d\u6027\u63aa\u8f9e\u4fee\u8ba2\u7a3f.md').write_text(g['prompt'] + '\n')
+(TASK / '\u4e2d\u6027\u63aa\u8f9e\u4fee\u8ba2\u540e_22\u7ec4\u5f85\u56de\u5199.json').write_text(json.dumps(draft, ensure_ascii=False, indent=2))
+print(json.dumps({'paragraphs_changed': len(patches), 'duration': 10, 'shots': 3, 'dialogue': g['dialogue_lines']}, ensure_ascii=False))

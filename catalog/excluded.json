@@ -1,0 +1,282 @@
+[
+  {
+    "source": "/Users/zc/.codex/skills/migrate-to-codex/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Users/zc/.codex/plugins/cache/import-20261019/discord/0.0.4/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Users/zc/.codex/plugins/cache/import-20261019/imessage/0.1.0/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Users/zc/.codex/plugins/cache/import-20261019/telegram/0.0.6/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Users/zc/.codex/plugins/cache/openai-curated-remote/sites/1.1.2/skills/sites/templates/vinext-starter/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-backups/format-c-merge-20260930-105229/write-format-c-video-prompts/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-backups/only-jumeng-20261016-200419/081-sites/templates/vinext-starter/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-backups/removed-prompt-skills-20261016-200035/write-format-c-video-prompts/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/claude/plugins/marketplaces/claude-plugins-official/external_plugins/discord/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/claude/plugins/marketplaces/claude-plugins-official/external_plugins/imessage/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/claude/plugins/marketplaces/claude-plugins-official/external_plugins/telegram/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/codex/plugins/cache/openai-bundled/computer-use/1.0.857/Codex Computer Use.app",
+    "reason": "compiled application runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/codex/plugins/cache/openai-curated-remote/sites/1.0.2-remix-a.1/skills/sites/templates/vinext-starter/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/codex/plugins_副本/cache/openai-bundled/computer-use/1.0.857/Codex Computer Use.app",
+    "reason": "compiled application runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/codex/skills/migrate-to-codex/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/codex/skills_副本/migrate-to-codex/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/skill-backups/20261018_短剧提示词与分镜_8ae6f647/已移出/local/shortdrama-storyboard-qc/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/plugins/cache/import-20261019/discord/0.0.4/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/plugins/cache/import-20261019/imessage/0.1.0/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/plugins/cache/import-20261019/telegram/0.0.6/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/plugins/cache/openai-curated-remote/sites/1.1.1/skills/sites/templates/vinext-starter/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/plugins/import-20261019/supplements/sites/skills/sites/templates/vinext-starter/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-backups/format-c-merge-20260930-105229/write-format-c-video-prompts/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-backups/only-jumeng-20261016-200419/081-sites/templates/vinext-starter/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-backups/removed-prompt-skills-20261016-200035/write-format-c-video-prompts/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-imports/20261019-094923/skills-export-20261019/payload/claude/plugins/marketplaces/claude-plugins-official/external_plugins/discord/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-imports/20261019-094923/skills-export-20261019/payload/claude/plugins/marketplaces/claude-plugins-official/external_plugins/imessage/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-imports/20261019-094923/skills-export-20261019/payload/claude/plugins/marketplaces/claude-plugins-official/external_plugins/telegram/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-imports/20261019-094923/skills-export-20261019/payload/codex/plugins/cache/openai-bundled/computer-use/1.0.857/Codex Computer Use.app",
+    "reason": "compiled application runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-imports/20261019-094923/skills-export-20261019/payload/codex/plugins/cache/openai-curated-remote/sites/1.0.2-remix-a.1/skills/sites/templates/vinext-starter/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-imports/20261019-094923/skills-export-20261019/payload/codex/plugins_副本/cache/openai-bundled/computer-use/1.0.857/Codex Computer Use.app",
+    "reason": "compiled application runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-imports/20261019-094923/skills-export-20261019/payload/codex/skills/migrate-to-codex/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-imports/20261019-094923/skills-export-20261019/payload/codex/skills_副本/migrate-to-codex/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skill-imports/20261019-094923/skills-export-20261019/payload/skill-backups/20261018_短剧提示词与分镜_8ae6f647/已移出/local/shortdrama-storyboard-qc/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/codex_副本/skills/migrate-to-codex/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/9-16-movie-story/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/camera-movement/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/character-asset/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/costume-accessories-extractor/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/focal-grid/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/makeup-hair-extractor/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/movie-story/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/performance-description/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/runninghub/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/scene-asset/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/script-props-extractor/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/set-art-extractor/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/storyboard/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/storyboard-table/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/tencent-docs/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/tweet-storyboard/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/viral-thread-story/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/WorkBuddy/skills/网络小说助手/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/剧作项目/我不再做教父的大码人形抱枕/skills-export-20261019/payload/claude/plugins/marketplaces/claude-plugins-official/external_plugins/discord/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/剧作项目/我不再做教父的大码人形抱枕/skills-export-20261019/payload/claude/plugins/marketplaces/claude-plugins-official/external_plugins/imessage/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/剧作项目/我不再做教父的大码人形抱枕/skills-export-20261019/payload/claude/plugins/marketplaces/claude-plugins-official/external_plugins/telegram/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/剧作项目/我不再做教父的大码人形抱枕/skills-export-20261019/payload/codex/plugins/cache/openai-bundled/computer-use/1.0.857/Codex Computer Use.app",
+    "reason": "compiled application runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Volumes/YSAigc/剧作项目/我不再做教父的大码人形抱枕/skills-export-20261019/payload/codex/plugins/cache/openai-curated-remote/sites/1.0.2-remix-a.1/skills/sites/templates/vinext-starter/.npmrc",
+    "reason": "account/credential state filename"
+  },
+  {
+    "source": "/Volumes/YSAigc/剧作项目/我不再做教父的大码人形抱枕/skills-export-20261019/payload/codex/plugins_副本/cache/openai-bundled/computer-use/1.0.857/Codex Computer Use.app",
+    "reason": "compiled application runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Volumes/YSAigc/剧作项目/我不再做教父的大码人形抱枕/skills-export-20261019/payload/codex/skills/migrate-to-codex/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/剧作项目/我不再做教父的大码人形抱枕/skills-export-20261019/payload/codex/skills_副本/migrate-to-codex/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/剧作项目/我不再做教父的大码人形抱枕/skills-export-20261019/payload/skill-backups/20261018_短剧提示词与分镜_8ae6f647/已移出/local/shortdrama-storyboard-qc/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Volumes/YSAigc/Codex/github-skills-workflows-20261024/archive-work/75aa417577e0/write-format-c-video-prompts/.DS_Store",
+    "reason": "runtime/cache directory"
+  },
+  {
+    "source": "/Users/zc/.codex/plugins/cache/import-20261019/codex-security/0.1.11/mcp/mcp-app.html.br",
+    "reason": "compiled plugin runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Users/zc/.codex/plugins/cache/import-20261019/codex-security/0.1.11/mcp/server.mjs.br.part-000",
+    "reason": "compiled plugin runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Users/zc/.codex/plugins/cache/import-20261019/codex-security/0.1.11/mcp/server.mjs.br.part-001",
+    "reason": "compiled plugin runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/codex/plugins/cache/openai-bundled/browser/26.1013.40934/scripts/browser-accessibility.wasm.br",
+    "reason": "compiled plugin runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/codex/plugins/cache/openai-bundled/browser/26.1013.40934/scripts/zxing_reader.wasm",
+    "reason": "compiled plugin runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/codex/plugins/cache/openai-bundled/chrome/26.818.21641/scripts/browser-accessibility.wasm.br",
+    "reason": "compiled plugin runtime; reinstall official runtime on destination"
+  },
+  {
+    "source": "/Users/zc/.codex/skill-imports/20261019-094923/skills-export-20261019/payload/codex/plugins/cache/openai-bundled/chrome/26.818.21641/scripts/zxing_reader.wasm",
+    "reason": "compiled plugin runtime; reinstall official runtime on destination"
+  }
+]

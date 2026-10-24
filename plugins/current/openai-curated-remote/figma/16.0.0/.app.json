@@ -1,0 +1,11 @@
+{
+  "apps": {
+    "figma": {
+      "id": "asdk_app_68df038e0ba48191908c8434991bbac2"
+    },
+    "figma_runtime": {
+      "id": "connector_68df038e0ba48191908c8434991bbac2",
+      "required": false
+    }
+  }
+}

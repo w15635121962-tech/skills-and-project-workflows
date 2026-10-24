@@ -1,0 +1,4 @@
+interface:
+  display_name: "剧梦提示词素材绑定"
+  short_description: "在剧梦提示词中逐处绑定人物与场景素材，保留正文并核对原生引用卡"
+  default_prompt: "使用 $jumeng-bind-prompt-assets 为指定剧梦分镜绑定素材，检查引用锁和各镜画面中的人物引用。"

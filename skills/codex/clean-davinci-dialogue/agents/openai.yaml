@@ -1,0 +1,3 @@
+interface:
+  display_name: "DaVinci Dialogue Cleanup"
+  short_description: "Reduce dialogue noise and level speech in Fairlight"

@@ -1,0 +1,5 @@
+from common_v14 import *
+r,pm,p,mp,t=connect();assert r.OpenPage('edit');it=next(x for x in t.GetItemListInTrack('video',1) if x.GetStart()==60);c=it.GetFusionCompByIndex(1);xf=c.FindTool('V14_StaticGentlePush');print('NATIVE',p.GetCurrentTimeline().GetName(),it.GetUniqueId(),it.GetFusionCompNameList(),c.GetAttrs(),[xf.GetInput('Size',f) for f in [0,28,56,150,206]],flush=True)
+fu=r.Fusion();print('PURGE_METHOD',callable(fu.PurgeCache),flush=True);fu.PurgeCache();time.sleep(.4);cap(p,t,116,PRE/'缓推显影复核_60_末.jpg',1)
+im=Image.open(PRE/'缓推显影复核_60_末.jpg').convert('RGB');base=Image.open(PRE/'连续运动核验'/'书写_原版'/'0056.jpg').convert('RGB');print('PURGED_VS_BEFORE',float(abs(np.array(im,float)-np.array(base,float)).mean()),flush=True)
+assert it.LoadFusionCompByName(it.GetFusionCompNameList()[1] if isinstance(it.GetFusionCompNameList(),dict) else it.GetFusionCompNameList()[0]);fu.PurgeCache();cap(p,t,116,PRE/'缓推载入复核_60_末.jpg',1);print('RELOADED_VS_BEFORE',float(abs(np.array(Image.open(PRE/'缓推载入复核_60_末.jpg'),float)-np.array(base,float)).mean()),flush=True);assert pm.SaveProject()

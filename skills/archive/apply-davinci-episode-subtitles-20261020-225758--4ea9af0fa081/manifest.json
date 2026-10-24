@@ -1,0 +1,17 @@
+{
+  "source": "/Users/zc/.codex/skills/apply-davinci-episode-subtitles",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "9c54549f6568a82f88e79030e7c0e99f85c4b310fcb6baa34f8450a9a09bf34d"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "a6a47eb896f2d1af2b5cef0c38b69980306d81fd0590a0d44071be35df1bea19"
+    },
+    {
+      "path": "references/subtitle-presets.md",
+      "sha256": "25b03f73189f42dbadd9d3415bd307b24561eb0e27f1cab32e54e5f29a1460b3"
+    }
+  ]
+}

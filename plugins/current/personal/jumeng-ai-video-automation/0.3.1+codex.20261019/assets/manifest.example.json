@@ -1,0 +1,20 @@
+{
+  "assets": [
+    {
+      "id": "character_aria",
+      "type": "character",
+      "name": "Aria",
+      "path": "characters/aria.png",
+      "tags": ["女主", "真千金", "黑发", "蓝礼服"],
+      "source": "user"
+    },
+    {
+      "id": "character_hades_human",
+      "type": "character",
+      "name": "Hades 人形",
+      "path": "characters/hades-human.png",
+      "tags": ["远古神明", "冰蓝竖瞳", "墨色长发"],
+      "source": "user"
+    }
+  ]
+}

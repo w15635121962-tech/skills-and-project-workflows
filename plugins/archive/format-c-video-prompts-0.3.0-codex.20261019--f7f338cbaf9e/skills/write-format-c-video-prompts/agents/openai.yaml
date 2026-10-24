@@ -1,0 +1,4 @@
+interface:
+  display_name: "提示词3.0进化版"
+  short_description: "按最新截图八字段写清动作、人物表演、镜头关系与连续衔接"
+  default_prompt: "使用 $write-format-c-video-prompts 读取统一的提示词3.0规范，将当前剧本写成Shot八字段提示词。"

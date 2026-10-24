@@ -1,0 +1,4 @@
+interface:
+  display_name: "按集套用达芬奇字幕"
+  short_description: "按时间码插入对应集字幕，套用指定预设并以集号命名字幕轨道"
+  default_prompt: "使用 $apply-davinci-episode-subtitles 给指定集的时间线插入对应字幕，套用九州海外短剧字幕预设，并以集号命名字幕轨道。"

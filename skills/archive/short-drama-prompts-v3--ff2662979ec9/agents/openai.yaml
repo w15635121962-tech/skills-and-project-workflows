@@ -1,0 +1,4 @@
+interface:
+  display_name: "提示词3.0进化版"
+  short_description: "按截图八字段格式制作短剧提示词，强化走位、表演与镜头连续性"
+  default_prompt: "使用 $short-drama-prompts-v3，把提供的剧本按截图的Shot格式写成提示词3.0进化版，保留指定角色和场景参考。"

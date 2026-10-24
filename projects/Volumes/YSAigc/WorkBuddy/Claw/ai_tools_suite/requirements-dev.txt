@@ -1,0 +1,38 @@
+# 开发依赖 - AI 工具套件测试与开发
+# 安装：pip install -r requirements-dev.txt
+
+# —— 测试框架 ——
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+pytest-asyncio>=0.21.0
+
+# —— 代码质量 ——
+flake8>=6.0.0
+black>=23.0.0
+isort>=5.12.0
+mypy>=1.5.0
+
+# —— 安全扫描 ——
+bandit>=1.7.5
+safety>=2.3.0
+
+# —— 文档生成 ——
+mkdocs>=1.5.0
+mkdocs-material>=9.4.0
+mkdocstrings[python]>=0.22.0
+
+# —— HTTP mock（用于 API 测试）——
+responses>=0.23.0
+requests-mock>=1.11.0
+
+# —— 图片处理测试（可选）——
+# opencv-python-headless>=4.8.0
+# Pillow>=10.0.0
+# numpy>=1.24.0
+
+# —— 进度条（已包含在主依赖中）——
+# tqdm>=4.65.0
+
+# —— .env 文件支持（已包含在主依赖中）——
+# python-dotenv>=1.0.0

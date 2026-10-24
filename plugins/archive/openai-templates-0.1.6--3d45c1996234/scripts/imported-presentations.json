@@ -1,0 +1,34 @@
+[
+  {
+    "name": "photography-portfolio",
+    "slides": 6
+  },
+  {
+    "name": "product-strategy",
+    "slides": 5
+  },
+  {
+    "name": "next-generation-os",
+    "slides": 5
+  },
+  {
+    "name": "calder-architecture",
+    "slides": 6
+  },
+  {
+    "name": "brand-guidelines",
+    "slides": 6
+  },
+  {
+    "name": "state-of-art",
+    "slides": 6
+  },
+  {
+    "name": "growth-strategy",
+    "slides": 6
+  },
+  {
+    "name": "weekly-business-review",
+    "slides": 10
+  }
+]

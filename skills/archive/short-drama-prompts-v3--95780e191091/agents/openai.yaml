@@ -1,0 +1,4 @@
+interface:
+  display_name: "分组时间轴表演提示词"
+  short_description: "按分组时间轴写短剧提示词，强化演员情绪、动作因果和前后镜头接续"
+  default_prompt: "使用 $short-drama-prompts-v3，将提供的源剧本写成分组时间轴表演提示词，保留原台词、指定资产和人物状态。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "短剧制作通用流程"
+  short_description: "从剧本与分镜到剧梦、旁白、达芬奇剪辑、原生SRT及保存回读的通用流程"
+  default_prompt: "使用 $short-drama-production-workflow 按当前项目资料和已授权阶段推进短剧制作，保留原文、连续性、同期声与交付核验。"

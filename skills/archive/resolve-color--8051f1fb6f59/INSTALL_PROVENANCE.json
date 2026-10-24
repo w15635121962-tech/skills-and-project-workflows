@@ -1,0 +1,39 @@
+{
+  "repository": "samuelgursky/davinci-resolve-mcp",
+  "commit": "90eba8cdf4df333beb4ce41fe0ab198b8fa7d125",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "/Users/xuan/Codex_YS_Data/CodexHome/skills/resolve-color/SKILL.md",
+      "sha256": "7b7816ac2b7e05e766c1dd523257bc080d94707765592f4fe6a904c88130f082",
+      "bytes": 7756
+    },
+    {
+      "path": "/Users/xuan/Codex_YS_Data/CodexHome/skills/resolve-color/docs/guides/color-decision-guide.md",
+      "sha256": "c7dbc188e496c6aa4f6fd92e7c32628af61af4f08fc47e1d8f6629946afb7cfd",
+      "bytes": 20487
+    },
+    {
+      "path": "/Users/xuan/Codex_YS_Data/CodexHome/skills/resolve-color/docs/kernels/color-grade-kernel.md",
+      "sha256": "7153db34ce17199cd8c9e24614a7bf5b47c0e9bee40d5ab01c30d6620849a56c",
+      "bytes": 10674
+    },
+    {
+      "path": "/Users/xuan/Codex_YS_Data/CodexHome/skills/resolve-color/resolve-advanced/README.md",
+      "sha256": "d78ca473729e238dff0c62767abecb5adde59fc51247a8c7a7c3fc89485d0ed6",
+      "bytes": 19176
+    },
+    {
+      "path": "/Users/xuan/Codex_YS_Data/CodexHome/skills/resolve-color/resolve-advanced/vendor/drx-parameters/CALIBRATION-STATUS.md",
+      "sha256": "0bc848706355d6c8668c5aefabd92b1909e1483352db1cf4abe64af37774d7e5",
+      "bytes": 23969
+    },
+    {
+      "path": "/Users/xuan/Codex_YS_Data/CodexHome/skills/resolve-color/LICENSE",
+      "sha256": "ab45769f0fc180bec9877e050c5467283f4c023e8571a44780195dc16d764d97",
+      "bytes": 1122
+    }
+  ],
+  "local_backend": "Official Resolve Python scripting API; no MCP server installed",
+  "upstream_content_unmodified": true
+}

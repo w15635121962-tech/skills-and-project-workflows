@@ -1,0 +1,68 @@
+---
+name: first-cut-davinci-dialogue
+description: Make a tight first dialogue cut in DaVinci Resolve using an established editing standard, checking audio waveforms against a word-timed transcript. Use for take selection, repeated or abandoned wording, natural pause timing, clipped-word repairs, and two-frame audio crossfades.
+---
+
+# DaVinci Dialogue First Cut
+
+## Editing standard
+
+Keep the best usable delivery of each intended thought. Remove alternate takes, abandoned starts, accidental repeated words, and redundant attempts. Judge the delivery in context; do not automatically choose the last take or delete intentional emphasis. Preserve meaning and complete words.
+
+Cut long spaces between sentences down close. Do not leave dead time from retakes or hesitation between completed thoughts. Preserve natural pauses within a fluent delivery, including pauses that carry meaning or give the sentence its rhythm. The user wants tight pacing, not every quiet waveform removed. Do not substitute a fixed silence threshold for listening.
+
+Do not remove unique substantive words merely to shorten the video. Make cuts at clean word boundaries without clipping initial consonants, final syllables, or audible word tails. Listen to the result at normal speed and adjust the edit when a join sounds rushed or incomplete.
+
+## Workflow
+
+Prefer Resolve MCP for timeline inspection and supported editing operations; use computer use only for missing capabilities. Inspect the live timeline each turn and preserve the user's manual changes. For a requested visual pass, use `edit-davinci-video` for camera/screen framing, authentic screenshots, unique B-roll, main-timeline overlays, and restrained animation. Do not add visual work merely because this dialogue skill was invoked. If a one-clip sample is requested, render and identify that exact sample before seeking approval to apply it elsewhere.
+
+### Word-boundary verification
+
+Before making the first cut, obtain a **word-timed transcript and the corresponding audio waveform**, aligned to the same source clock. Check them together at every proposed dialogue join; neither a sentence-level transcript nor a waveform-only silence detector satisfies this requirement. Follow [the waveform and word-timing audit](references/waveform-word-timing.md) for source-to-timeline mapping, incoming/outgoing edge checks, pause assessment, and the per-join verification record. Reuse that record for later processing, transitions, and revisions, updating affected joins when their audio or timing changes.
+
+Treat speech-to-text word timestamps as navigation estimates, not exact trim points. They can end before a final syllable or span silence and an abandoned restart. Check source audio on both sides of every proposed join with surrounding sentence context, preserving quiet consonants and word tails. Review the assembled join as well: separately acceptable outgoing and incoming trims can still produce an incomplete phrase or excessive pause together. Waveform and voice-activity analysis can flag suspicious cuts and dead lead-ins, but low amplitude alone does not prove silence. After adjusting an edge, recheck that join and preserve the same trim on all synced layers. If normal-speed audio audition is unavailable, explicitly report that limitation instead of claiming the dialogue was fully listened through.
+
+Agreement between multiple transcriptions and a fixed padding duration do not prove a safe edge. A recognizer can place an end timestamp before the final phoneme. Inspect the actual signal and the assembled fade rather than treating recognition consensus as proof.
+
+Before delivering a first cut or repairing this failure, audit **every outgoing and incoming edge** against the actual source audio and the assembled, processed join. Identify the final intended phoneme, including quiet consonants, stop releases, and decaying syllables; place the cut so the two-frame fade does not attenuate that phoneme. Use the local recording's noise floor and waveform/spectrogram as supporting evidence, not a universal amplitude threshold. Restore only the needed source coverage; do not apply a blanket extension that can reintroduce the next discarded word. Check that every internal crossfade is actually centered after ripple trims.
+
+For uncertain restarts, a separate CTC character alignment or unconditioned greedy transcript can help expose fragments that sentence-level recognition normalizes away. Compare it with the actual signal and intended take. Forced alignment can stretch a word across silence or an omitted restart, so long token spans or contradictory boundaries require contextual review rather than automatic trimming. Incoming clips must begin with the complete intended word, not the last syllable of a discarded attempt followed by the correct take.
+
+Keep an edge-by-edge record of inspected source frames, repairs, and unresolved ambiguities. Validate the rendered repair at normal speed, including joins changed by later ripple edits. Structural sync checks, a clean transcript, waveform scans, and loudness measurements do not establish an audibly clean edit. If direct listening is unavailable, finish the supported analysis and repairs, supply an audition artifact, and clearly identify that listening verification remains; never report "no clipped words remain" or promise this cannot recur on the strength of automated checks alone.
+
+### Clean incoming shots and discarded wording
+
+For tight dialogue cuts, start the incoming shot at the first intended spoken sound, after any preparatory inhalation, mouth reset, or idle lead-in. Do not retain a breath followed by the word just because the breath registers as audio activity. Even 2–5 idle frames after a visible cut can interrupt the flow; inspect these short lead-ins, not only long silences. Use the nearest safe frame at or immediately before the first phoneme, preserving quiet initial consonants. Do not apply a blanket head trim or remove natural breaths inside a continuing sentence.
+
+Audit incoming silence **forward from every clip start**, including starts that are already quiet. A backward search for a quiet boundary cannot detect a silent lead-in. Locate the intended word in context, scan forward through idle noise and preparatory breaths, then identify its first phoneme from the waveform and, for quiet consonants, the spectrogram. Recognition emissions can lag the actual onset; do not cut at the token timestamp or at the first loud vowel. Place the boundary on the nearest safe preceding frame without adding extra whole-frame safety padding. Quantization within that frame is acceptable; deliberately retained blank frames before the incoming phrase are not.
+
+Treat outgoing word completeness and incoming immediacy as separate acceptance checks at every join. A restored word ending does not finish the repair. Record both results, review the processed assembled start after fades, and investigate remaining silent frames before delivery. Include already-quiet heads in the audit coverage count; do not silently mark them passed because an algorithm returned no backward correction.
+
+Review the outgoing and incoming phrases together for self-correction. A complete but discarded label can still be a false take even when transcription looks grammatical. When the speaker replaces an earlier formulation, keep the intended corrected delivery once and preserve neighboring valid list items. Preserve intentional elaboration; use source context and explicit user corrections to distinguish it from redundant attempts.
+
+If an abandoned word is cut off, remove that entire discarded word, including its onset, rather than retaining the fragment or extending it into an unwanted take. Inspect every incoming edge for a few frames left over from a previous attempt. Speech recognition can omit or normalize those fragments, so a clean transcript is not proof of a clean cut.
+
+When applying watch-through notes, export the current timeline first, anchor every note to the original source frames and surrounding words, and preserve manual changes. Record before/after locations because ripple edits shift later timestamps. Validate each flagged join in the assembled result, then check other joins for the same demonstrated failure patterns. Keep breath/lead-in review, discarded-take review, and structural sync/transition checks distinct: passing one does not prove the others passed. Report any unavailable auditory verification honestly; skill validation and waveform measurements cannot guarantee that no editorial errors remain.
+
+### Aligned cuts across layers
+
+For this dialogue workflow, every editorial cut must be a straight vertical line through all synced camera, screen, and associated audio layers present at that point, including muted reference audio. Use the same timeline frame for every layer; preserve their established source offsets. Do not make staggered cuts, J-cuts, or L-cuts unless the user explicitly requests them.
+
+Before cutting or ripple-deleting a range, verify track locks, selection, and track targeting include every participating layer. Remove exactly the same timeline interval from all of them. Linked Selection alone is not proof that the screen and its reference audio will follow the camera. Existing intentional inserts must retain their content and timing relationship; split any spanning insert at the shared boundary without removing unique material.
+
+After editing, compare the timeline-frame positions of every new boundary across participating tracks, using timeline data when available or frame-accurate UI inspection. Fix mismatches before adding transitions. Center audio crossfades on those shared boundaries without moving the underlying clip cuts. The transition overlap is allowed; a staggered underlying edit is not.
+
+1. Inspect the active project, timeline, source media, and dialogue tracks. Save a recoverable timeline version before changing the edit. Preserve existing sync offsets and individually editable clips.
+   Before making the first cut on new dialogue edits, follow [clean-davinci-dialogue](../clean-davinci-dialogue/SKILL.md): clean and level the dialogue, render the processed full-coverage audio to PCM WAV, and place that verified audio in the working timeline for smooth playback. Preserve the original audio and editable chain in a recoverable preparation timeline, bypass processing already baked into the working audio, and retain trimmable linked clips. A QC-only export is insufficient. Do not rebuild an existing manual cut merely to apply this order retroactively.
+2. Review the entire source delivery and available takes. Check the waveform against a word-timed transcript for every proposed join before trimming, then verify take choices, complete phonemes, and thought-level pauses against the actual audio. Keep the strongest coherent version of each thought once. Do not wait for user review to discover clipped words or idle incoming frames.
+3. Remove unwanted takes and repeated material, closing the resulting gaps. Tighten long sentence gaps while retaining natural pauses in the chosen performance. Keep linked picture and dialogue synchronized. In an existing assembled timeline, preserve intentional inserts and their relationship to the surrounding dialogue.
+4. After the editorial cut, use `smooth-davinci-audio-cuts` for centered **Cross Fade 0 dB**, **2 frames** transitions across dialogue cuts.
+5. Apply in batches: turn off Linked Selection when needed, box-select only the intended dialogue audio clips, and press **Shift+D** once. Do not select every seam individually. Keep music and effects outside the selection; inspect outer clip ends because batch application can add end fades. Restore the previous Linked Selection state afterward.
+6. Verify that every adjacent audio-clip seam created by these dialogue cuts has a centered Cross Fade 0 dB lasting exactly 2 frames, including corresponding muted reference-audio seams. Apply reference-track transitions in a separate batch when needed; keep unrelated music and effects outside these batches. Compare the expected seam list with actual transitions: pressing Shift+D or seeing a few transitions is not sufficient verification. Check for missing transitions, wrong durations, insufficient handles, and unintended outer-end fades. Do not create transitions across actual gaps.
+7. Recheck that all underlying cut boundaries remain vertically aligned after transitions. Listen through the full edited dialogue at normal speed. Correct repeats, dead gaps, cut-off words, unnatural joins, and clicks. Preserve existing video treatment; do not add video dissolves or nest or flatten the edited dialogue. The pre-cut processed audio render above remains editable as separate timeline clips.
+8. Save the edit and report the aligned-cut and audio-transition verification results, plus any unresolved take ambiguity or boundary that could not receive a clean transition. Do not describe the transition pass as complete while any required seam is missing a transition; identify any unresolved seam by track and timecode.
+
+## Reference availability
+
+Apply this written standard to the current source media. No private reference project or source recording is required or bundled. Preserve intentional inserts and the user's current instructions.

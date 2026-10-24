@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DbAppVer="19.1.3.0007" DbPrjVer="14"-->
+<Gallery::GyStill DbId="d31c51ae-12d1-4752-acbb-f45bc115fef0">
+ <FieldsBlob/>
+ <SrcHint>学校_曲线与二级精调_v12_20261017</SrcHint>
+ <SrcType>1</SrcType>
+ <GalleryPath/>
+ <Label>v12_1_4289</Label>
+ <RecTC>00:00:00:00</RecTC>
+ <SrcTC>00:00:00:00</SrcTC>
+ <DpxDescriptor>50</DpxDescriptor>
+ <Width>1920</Width>
+ <Height>1080</Height>
+ <BitDepth>10</BitDepth>
+ <PAR>1</PAR>
+ <Endianship>1</Endianship>
+ <CreateTime>2026-10-17T08:41:29.194</CreateTime>
+ <pClipFullVer>
+  <ListMgt::LmVersion DbId="10c36e58-099f-49ab-900f-1f649f4f81b3">
+   <FieldsBlob/>
+   <Name/>
+   <HasCorrection>true</HasCorrection>
+   <VerType>0</VerType>
+   <ImplVersion>1</ImplVersion>
+   <IncludedInRecording>true</IncludedInRecording>
+   <FlatPassEnabled>false</FlatPassEnabled>
+   <RGBAOutputEnabled>false</RGBAOutputEnabled>
+   <Body>8128b52ffd6022062d1700a6e38b4cc0d46d0e3e8a52ca69b177c13eac2b10e05e9e2b3bbb00250b397fe9472326090243ab8848e68da238517fe1ab69862ea7afb5b54dd358ea37fd99e10e7cde844bc27ef54092647423524a19750078007a00d666c178f1217f50aaf05c30b1e837394b4a491ff21d013210a40ff90b108c0db135ca7a17fa90dfc745233e9addf23e5ed27886cc81f3d26c6a4d4ed5a9b9999585a5c3aaead0daca2223671707ec4a9977e3c7562eafdfeff793f04fe7abd314fc13ecd5cd976e6dca3fed57ff02fc6ef0c52c1dfc7ece31e6a84ca5f30fb5264793ae37144761b7aab71d4e855967d967e29d1f1c727155f9b0a07878e331ecbd03bdd6616e74b5c0dc1a712ef460584171787c760c640b10a4b79d1d8ece8674a585434fce0d8cae25c3ce4d97c0476747078bc55afc8cbb9a5e73bc31d08ad77fa377122ffe967cc8ad0db35be2bf47b4cdeb6a0852439612eb762ae8e8458ef20419bdc85f3c54406264cc584a74ab488a436f686d55713111565ccc04ddda2243690931f306dfc524622a841488a8d7dcf6d3b3a4eda747da684c95ad495bacdbec951599fe7a4e4d28644a2335907542a6b16e3549d5ad15b5aea9d90c8d789e8ed7015666775e9ac95d553e2c28deb5014d93f2dc03fef9b94dfe2487cd2fcf5dfef399fd7f220382657e5dcbb45376c272895fd72c8f1e07374ef20064c448f2f97c2009485252612149e9e843dee08a57334af1217750f42147d1d383e884b5d6c40aca07a20f3904272102626b447bbdc41d325e220159a8b140239911aa092305052d54c610a32169e20112c00475a7a4c00952acc48ac44f25f5940567d32efd0e894bf22c97f08e4aa30fc3041d68ac7894962a79603dbe97812f04a63278e78be8cb85079872ef8aa944953aaa51fbe3763d38c001ce8398c3d52d2e8ee17790e4b65823cd0c5d5749e2e6c1697c4360ddba527ffefa6d23963240c49e20b7ffc0a83cbccf46a247b0b287d24e75e30317f6aebb2f68447499130204b4eb0c6250b0a8d46d8054</Body>
+   <UseVersionClipProcParams>true</UseVersionClipProcParams>
+  </ListMgt::LmVersion>
+ </pClipFullVer>
+ <pTrackVer>
+  <ListMgt::LmVersion DbId="2ea878f0-ab13-4301-b3fb-955a832ab8ce">
+   <FieldsBlob/>
+   <Name/>
+   <HasCorrection>false</HasCorrection>
+   <VerType>1</VerType>
+   <ImplVersion>1</ImplVersion>
+   <IncludedInRecording>true</IncludedInRecording>
+   <FlatPassEnabled>false</FlatPassEnabled>
+   <RGBAOutputEnabled>false</RGBAOutputEnabled>
+   <Body>8128b52ffd20684103000a4408ffffffff0f10011a2208800f10b8081d0000803f20800f28b808350000803f38800f40b80848ffffffff0f20c2fb124a0408021040520408031040580160b9e9ccd6061a2020be0128b401380140554a00520c0a0a08818080800c12021002609deaccd606</Body>
+   <UseVersionClipProcParams>true</UseVersionClipProcParams>
+  </ListMgt::LmVersion>
+ </pTrackVer>
+ <PrimaryCCMode>0</PrimaryCCMode>
+</Gallery::GyStill>

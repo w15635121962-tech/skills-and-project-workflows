@@ -1,0 +1,4 @@
+interface:
+  display_name: "短剧分镜拆解与自检"
+  short_description: "自动拆分短剧分镜，补足镜头数量并强化视听、情绪与连续性"
+  default_prompt: "使用 $shortdrama-storyboard-qc 将这段剧本拆成可生成分镜，自动补足镜头、视听语言和人物情绪并复检。"

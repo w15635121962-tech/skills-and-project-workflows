@@ -1,0 +1,4 @@
+interface:
+  display_name: "Short Drama Video Prompts"
+  short_description: "短剧视频提示词导演与分镜审稿流程"
+  default_prompt: "Use $short-drama-video-prompts to create a five-shot Format C prompt group for a vertical short drama scene."

@@ -1,0 +1,25 @@
+{
+  "name": "format-c-video-prompts",
+  "version": "0.3.0+codex.20261019",
+  "description": "按用户最新提示词3.0截图格式编写、修改和续写短剧视频提示词，使用总设定与Shot八字段。",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "提示词3.0进化版",
+    "shortDescription": "按最新截图格式编写动作清楚、表演具体、衔接连贯的Shot八字段提示词。",
+    "longDescription": "读取本机统一的short-drama-prompts-v3技能和截图模板，保留源剧情、英文原台词、角色素材与连续性。旧插件ID仅用于兼容，不再激活旧提示词格式或额外输出表。",
+    "developerName": "Local developer",
+    "category": "Creativity",
+    "capabilities": [
+      "Write",
+      "Analyze"
+    ],
+    "defaultPrompt": [
+      "按提示词3.0进化版将当前剧本写成Shot八字段提示词。",
+      "按最新八字段格式修改这组提示词，保留未请求变更的剧情和原台词。",
+      "核对当前提示词的动作归属、轴线、道具和前后镜头衔接。"
+    ]
+  }
+}

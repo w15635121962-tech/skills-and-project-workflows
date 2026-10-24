@@ -1,0 +1,255 @@
+{
+  "repository": "samuelgursky/davinci-resolve-mcp",
+  "commit": "90eba8cdf4df333beb4ce41fe0ab198b8fa7d125",
+  "license": "MIT",
+  "installation": "Native DRX codec libraries only; no persistent MCP server or project database writer installed",
+  "runtime": "Node 24.17.0 native zstd; no npm install needed for codec",
+  "files": [
+    {
+      "path": "resolve-advanced/vendor/drx-codec/extract-lut-refs.js",
+      "bytes": 5828,
+      "sha256": "1ee2839d1bfb85a0ffec9acb38b02b235d0cf3864bbb3f75c8079d5eefac8ee2"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/node-layout.js",
+      "bytes": 18025,
+      "sha256": "a712408b1c956329adc949ee26435694ed2502879656fd708f8a8e5fa1204d2e"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/tool-resolver.js",
+      "bytes": 30682,
+      "sha256": "304804af4694406e79bf9e88b7895a4173a496da48b2001e2a8857ae71e3095d"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/extract-custom-curves.js",
+      "bytes": 7499,
+      "sha256": "507a9bd2b7d73f96cb00841fd7a65ceaa59cf9f094daf4a85df2a5e36981e0ea"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/resolved-drx-generator.js",
+      "bytes": 16164,
+      "sha256": "74012f063a70bff7803a8265c1d24102531f4e427e7f53b70f2934fcc51333ee"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/extract-ofx-params.js",
+      "bytes": 7565,
+      "sha256": "4a15c0fd942a1fe3460e93f51c18a2a1dac97b14258861a1ca73760ecf6b5c5b"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/drx-generator.js",
+      "bytes": 178586,
+      "sha256": "d34c796549ae6cef12426ad2c2a802909e1ced1c3a2ccf57daa79c37cbb15955"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/color-nlp-parser.js",
+      "bytes": 28540,
+      "sha256": "0bcecf31e5b9216b58431be251bbca3e233ea8f620096ab2644085df22464ed5"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/extract-power-window.js",
+      "bytes": 6395,
+      "sha256": "3c8e976320f6f93b6c94d2d58c0b504bc2e2c2aaedbef468399c140ef83a9f0f"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/extract-qualifier.js",
+      "bytes": 3291,
+      "sha256": "3686201789218adac80912a0a8bd865edbda864e65ad358708fdafb11e3e79dc"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/index.js",
+      "bytes": 3935,
+      "sha256": "467c60936fef73cc4ebf91f46ad76bf03823b690eb03fe4b506cb66ffdebf22b"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/drx-parser.js",
+      "bytes": 70485,
+      "sha256": "9bd09a026024ad4b20e9719ab3947017e4492fe7e592033efaf845c6e8969a5a"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/cdl-exporter.js",
+      "bytes": 13860,
+      "sha256": "c2a65a337f45b6e04c7d2d1d89b40355c5e764f17317d07889b5eb983dd139b0"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/vocabulary-intents.js",
+      "bytes": 15422,
+      "sha256": "78db50085282c67e29034e06444efc8c97a4c3353ac35f6acf870ed37499c010"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/drx-merger.js",
+      "bytes": 11198,
+      "sha256": "88c2fb314b111804247d99e88bdac2e09e4fa9f3e9453430cda9ab4819870342"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/training-examples.js",
+      "bytes": 21918,
+      "sha256": "fdcfe620655dd13a2f00f75fd8faa529cbb243f4b14e4a44e3b953faf776f1cc"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/extract-matte-finesse.js",
+      "bytes": 2739,
+      "sha256": "a115e219c77cbeae3b00d15aa7b9fc97a5a33010db0d6f99d103a6c859910a8b"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/extract-hsl-curves.js",
+      "bytes": 5572,
+      "sha256": "59961415ca8f8c4c44d6f98abb6979b192e9f0300dd42a8c2fe70ed4bec929ff"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/matte-roundtrip.test.js",
+      "bytes": 6247,
+      "sha256": "c8e1de0fe2cb7c3f2dd7e1ab9e9cf94c005ab15524037ddc471a49805354e28f"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/ofx-instance-key.test.js",
+      "bytes": 3763,
+      "sha256": "76d74d593cafcf70ef9d48fdfc632cf640b47b38c4e5b535e10a55682824fea8"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/curves-roundtrip.test.js",
+      "bytes": 5647,
+      "sha256": "8e3b354b7b6573d2847c599d2d58f5418683f03f2f96268f9f049f44efc0f377"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/power-window-roundtrip.test.js",
+      "bytes": 9913,
+      "sha256": "ce143b04a9b5e3d2fb17035346b710f8b11671fb45dca44af8ff0bccb6775b95"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/lut-refs-roundtrip.test.js",
+      "bytes": 4496,
+      "sha256": "d9e392f003ae7a08e6ec42ed04c62d1ced90000b8768c7407e324bf138475212"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/ofx-slugs-discovery.test.js",
+      "bytes": 5891,
+      "sha256": "61f4b79f04e6f0d9cea6537b35901ce741c15ba2c7afc2f1b93187154267ea9b"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/qualifier-roundtrip.test.js",
+      "bytes": 8570,
+      "sha256": "5f39cadb62bcb3edde7bcae3d6a1b3607bd36d54bd7a27cbad8572f5487cb923"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/hsl-curves-roundtrip.test.js",
+      "bytes": 3912,
+      "sha256": "0b341cd4a29f0b4b2b389fc0562ff444ab192700fcbfe651cecc7b91ee856585"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/ofx-roundtrip.test.js",
+      "bytes": 6977,
+      "sha256": "6e893e9195c62b9aa73adc3c2cfab9180c09d032110499077986e1bab1e62fd1"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/data/color-nlp-action-mappings.json",
+      "bytes": 112983,
+      "sha256": "a0583e7a655f69ce8737e1a0b6d09077af171c508274376c6d52857948f0cb0a"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/fixtures/p2-1-face-refinement.drx",
+      "bytes": 7742,
+      "sha256": "991cd20622ccb7cd2b3ead7cd17fe757b4b98cb0de983995f0494086c020e114"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/fixtures/p2-1-filmgrain.drx",
+      "bytes": 7790,
+      "sha256": "5016cc99acf0852142d1e7724ce6fa5212174f8879287a9676332d577afbb229"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/fixtures/p2-1-glow.drx",
+      "bytes": 8994,
+      "sha256": "be609bf977d8793c1012d0795e0a60ec03656144d336bbb409a41f00f6ed6e34"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/fixtures/p2-3-beauty-75.drx",
+      "bytes": 7720,
+      "sha256": "aa71a762f4b40483aecb8d78c5d7c9ce983392169c5ea7ddc06fc02eb81e0ebf"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/fixtures/p5-1-node-no-lut.drx",
+      "bytes": 7485,
+      "sha256": "426bd49c5a0e6a5481740053722f314c226401a12a08a59fbac228c9a8760d6c"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/fixtures/p2-3-beauty-25.drx",
+      "bytes": 7720,
+      "sha256": "f702b915d9a3ab1786e43f04105cd7a7829cf63b4a6ae34685ea886fa38e300c"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/fixtures/p2-1-lens-flare.drx",
+      "bytes": 10142,
+      "sha256": "5364aa87b4031ab7a942f7eb4c5488fd32e0f3b39d904053c87c32dde49cdd34"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-codec/__tests__/fixtures/p5-1-node-with-lut.drx",
+      "bytes": 7498,
+      "sha256": "5f273eda9996efb7d2f06cecb8dd554e8ca20548e2486514c0f7f3cc4f00a172"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/parameter-codec.js",
+      "bytes": 11995,
+      "sha256": "f810cb61c229d7c435f828e7158d29056fe0b7fd5060877a3fc266f4b5fc393a"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/parameter-ranges.js",
+      "bytes": 23786,
+      "sha256": "0d97a5f362ee6412f7dbf24508282f25dde9784d332a21eb2dcdcd3b9bc12ef5"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/resolvefx-registry.json",
+      "bytes": 299217,
+      "sha256": "0e800f20211be5c77ea3ff5007bc5d1c8b80774a053d2002ace2049bc4722b38"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/corrector-types.js",
+      "bytes": 4235,
+      "sha256": "2f112d3bbe6ffbc03415589b37d4be3749380d83dc489e7158530b2ba716ede1"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/tool-registry.descriptor.js",
+      "bytes": 1232,
+      "sha256": "5088bc42c728e40e5fd613a999d607189e994413a20bee738d44ce18257d9550"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/index.js",
+      "bytes": 7682,
+      "sha256": "2e874db1890cd61b38132e47404feefd744fb47836d490409c6b0e69a5be8cc8"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/DRX-VALUE-SCALING.md",
+      "bytes": 7903,
+      "sha256": "20f6bd35af1e989e3b52de7061c0c148b8112ebc329cf26b5563ba2579836c9e"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/CALIBRATION-STATUS.md",
+      "bytes": 23969,
+      "sha256": "0bc848706355d6c8668c5aefabd92b1909e1483352db1cf4abe64af37774d7e5"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/parameter-ids.js",
+      "bytes": 68966,
+      "sha256": "8104c12b2a8a1bc4934fbb42aac643da580080b9b1c17285438b9677ad6cc9f4"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/parameter-validator.js",
+      "bytes": 10397,
+      "sha256": "f213c76fae7287bfcbd63d67b338b3eaa77beb93b222bc0f89d2f07d0aa5b706"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/calibrated-ranges.json",
+      "bytes": 354162,
+      "sha256": "f00f5c28452d27d86c7819a531feeee1454872671fd15a544a3dceddc040ec31"
+    },
+    {
+      "path": "resolve-advanced/vendor/drx-parameters/tools/drx-analyzer.js",
+      "bytes": 11025,
+      "sha256": "af29306b8da71db4f88bed3981b966f2e9ad155455beb3a553b02c94e8bd4dd4"
+    },
+    {
+      "path": "resolve-advanced/package.json",
+      "sha256": "dd6ded63c0780d32056005bfb7d4207f2ea2590af5f80407140bee20387fc0b5",
+      "bytes": 2279
+    }
+  ],
+  "upstream_content_unmodified": true
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Multi-Angle 16-Grid"
+  short_description: "Create consistent 4x4 multi-angle reference grids"
+  default_prompt: "Use $multi-angle-16-grid to create a consistent 4x4 multi-angle grid around the subject."

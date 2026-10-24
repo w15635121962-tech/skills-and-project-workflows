@@ -1,0 +1,4 @@
+interface:
+  display_name: "短剧逐镜提示词（兼容入口）"
+  short_description: "兼容旧技能名称，统一读取中文八项模板，保留原台词并检查动作、人物位置和镜头接续"
+  default_prompt: "使用 $write-format-c-video-prompts，读取 $short-drama-shot-prompts，按当前中文八项模板完成逐镜提示词，保留源语言原台词和指定资产。"

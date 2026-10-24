@@ -1,0 +1,3 @@
+interface:
+  display_name: "DaVinci Dialogue First Cut"
+  short_description: "Cut dialogue using waveforms and word-level timing"

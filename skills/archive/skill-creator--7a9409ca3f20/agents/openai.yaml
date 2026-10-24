@@ -1,0 +1,6 @@
+interface:
+  display_name: "Skill Creator"
+  short_description: "创建并验证可复用的 Harness/Codex Skills"
+  default_prompt: "Use $skill-creator to turn my workflow into a validated reusable Skill."
+policy:
+  allow_implicit_invocation: true

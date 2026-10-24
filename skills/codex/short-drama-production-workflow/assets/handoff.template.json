@@ -1,0 +1,18 @@
+{
+  "project": null,
+  "version": null,
+  "episode": null,
+  "group_or_shot": null,
+  "stage_requested": null,
+  "source_revision": null,
+  "target": {"platform_url": null, "timeline_name": null, "timeline_id": null},
+  "status": {"draft": "pending", "assets_saved": "unknown", "native_references_saved": "unknown", "prompt_reopened": "unknown", "generation_accepted": "unknown", "generation_returned": "unknown", "download_archived": "unknown", "audio_content_check": "unknown", "audio_listened": "unknown", "timeline_imported": "unknown", "sync_audio_checked": "unknown", "native_srt_inserted": "unknown", "preset_loaded": "unknown", "saved_and_reopened": "unknown", "playback_reviewed": "unknown", "export_checked": "unknown"},
+  "files": [],
+  "adopted_media": [],
+  "backup": null,
+  "evidence": [],
+  "pending": [],
+  "stopped_scope": [],
+  "next_step": null,
+  "note": "状态和下一步不是续跑授权；只有存在对应证据才能把unknown或pending改为完成。"
+}

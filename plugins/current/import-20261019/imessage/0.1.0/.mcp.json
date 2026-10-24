@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "imessage": {
+      "command": "bun",
+      "args": [
+        "run",
+        "--cwd",
+        ".",
+        "--shell=bun",
+        "--silent",
+        "start"
+      ],
+      "cwd": "."
+    }
+  }
+}

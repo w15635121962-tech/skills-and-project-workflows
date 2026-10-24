@@ -1,0 +1,4 @@
+interface:
+  display_name: "Format C V2.6 提示词写作"
+  short_description: "严格采用完整组头与shot十一字段，编写或修订可直接生成的视频提示词"
+  default_prompt: "使用 $write-format-c-video-prompts 按Format C V2.6强制组头与shot十一字段格式编写完整视频提示词。"

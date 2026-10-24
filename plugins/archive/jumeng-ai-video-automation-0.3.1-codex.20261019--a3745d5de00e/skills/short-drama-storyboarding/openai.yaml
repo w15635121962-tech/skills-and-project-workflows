@@ -1,0 +1,4 @@
+interface:
+  display_name: "分组镜头设计"
+  short_description: "按源剧情写清动作时间轴、可见表演和相邻镜头连续关系"
+  default_prompt: "使用 $short-drama-storyboarding 按当前剧本交付分组镜头与动作时间轴，仅输出本次要求的设计稿。"

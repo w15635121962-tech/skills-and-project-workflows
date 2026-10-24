@@ -1,0 +1,109 @@
+{
+  "repository": "https://github.com/samuelgursky/davinci-resolve-mcp",
+  "commit": "90eba8cdf4df333beb4ce41fe0ab198b8fa7d125",
+  "license": "MIT",
+  "skill_path": ".agents/skills/resolve-audio/SKILL.md",
+  "installed_absolute_path": "/Users/xuan/Codex_YS_Data/CodexHome/skills/resolve-audio",
+  "installed_by": "skill-installer/scripts/install-skill-from-github.py",
+  "installed_utc": "2026-10-17T09:33:44.478758+00:00",
+  "payload": "Markdown documentation and MIT license only; no executable payload, dependencies, MCP server or hooks installed",
+  "original_skill_unchanged": true,
+  "supplemental_reference_note": "Referenced upstream original docs and tighten-recording skill copied byte-for-byte under this new skill only. Tighten reference is not installed as an independently triggered skill. It describes single-take subtraction and must not be applied as a global ripple to an existing multilayer film.",
+  "immediate_read_available": true,
+  "automatic_discovery": "Next user turn; skill installation alone does not register MCP tools",
+  "safety_constraints_for_this_project": [
+    "Do not invoke offline Fairlight Project.db patching",
+    "Do not execute full-timeline silence ripple on finished montage",
+    "Retain original source media and project; edits performed by parent in native versioned timeline",
+    "Chinese breaths require phrase/transcript/waveform review and actual audition; heuristic silence gate is only a candidate detector"
+  ],
+  "files": [
+    {
+      "source_path": ".agents/skills/resolve-audio/SKILL.md",
+      "installed_path": "SKILL.md",
+      "sha256": "11b136c13a0fc8b7de7372d246d93fddf80be51fb5c88c8571fd57f18080ccec",
+      "bytes": 6372
+    },
+    {
+      "source_path": "LICENSE",
+      "installed_path": "LICENSE",
+      "sha256": "ab45769f0fc180bec9877e050c5467283f4c023e8571a44780195dc16d764d97",
+      "bytes": 1122
+    },
+    {
+      "source_path": "docs/kernels/audio-fairlight-kernel.md",
+      "installed_path": "docs/kernels/audio-fairlight-kernel.md",
+      "sha256": "6be0c3f6c6228e7d1e3d0e3dca73a5513953d43048842088f44787245d91becb",
+      "bytes": 7978
+    },
+    {
+      "source_path": "resolve-advanced/README.md",
+      "installed_path": "resolve-advanced/README.md",
+      "sha256": "d78ca473729e238dff0c62767abecb5adde59fc51247a8c7a7c3fc89485d0ed6",
+      "bytes": 19176
+    },
+    {
+      "source_path": "docs/guides/title-library-automation.md",
+      "installed_path": "docs/guides/title-library-automation.md",
+      "sha256": "2e50c471a79df98c373c038210e792d81c6af0ccbed5e67dcb3f74faf52f0d82",
+      "bytes": 6292
+    },
+    {
+      "source_path": "docs/guides/subtitle-track-editing.md",
+      "installed_path": "docs/guides/subtitle-track-editing.md",
+      "sha256": "2715e3a70c28638b9af731ff1b239c6a4df44c042e6786ab9599a63766baed0f",
+      "bytes": 19413
+    },
+    {
+      "source_path": ".agents/skills/resolve-tighten-recording/SKILL.md",
+      "installed_path": "references/resolve-tighten-recording-upstream.md",
+      "sha256": "e30d00903b70758c51c950f3f9a09799ca91bc6afbe101da1c866d02e4e96241",
+      "bytes": 8759
+    }
+  ],
+  "existing_skills_audit": {
+    "checked_repository": "https://github.com/Forward-Future/alexs-davinci-editing-skills",
+    "checked_commit": "fc9b3b180a6999cf746ada36be8dc42a2f366f27",
+    "checked_by": "live git ls-remote and HTTPS raw GitHub downloads with certificate verification",
+    "skills": [
+      {
+        "name": "first-cut-davinci-dialogue",
+        "upstream_path": "skills/first-cut-davinci-dialogue/SKILL.md",
+        "local_sha256": "ac7775d0ffd52aab08485fb964ea428c2cc0ea41a3c50738862f49dc98c6fb41",
+        "byte_identical_to_pinned_upstream": true,
+        "modified": false
+      },
+      {
+        "name": "clean-davinci-dialogue",
+        "upstream_path": "skills/clean-davinci-dialogue/SKILL.md",
+        "local_sha256": "c42d9957fd74066d0d504e620eeaae272827d81bd937bb8ec015454767d86651",
+        "byte_identical_to_pinned_upstream": true,
+        "modified": false
+      },
+      {
+        "name": "smooth-davinci-audio-cuts",
+        "upstream_path": "skills/smooth-davinci-audio-cuts/SKILL.md",
+        "local_sha256": "d948c2053130efad518410ee10ac35d3723e4b4ce951e50dfa546cca715ca114",
+        "byte_identical_to_pinned_upstream": true,
+        "modified": false
+      }
+    ],
+    "additional_installed_readme_declared_origins": [
+      {
+        "skill": "davinci-resolve",
+        "repository": "https://github.com/odaiouattara0022-del/davinci-resolve-skill",
+        "exact_commit_not_asserted": true
+      },
+      {
+        "skill": "ffmpeg-skill",
+        "repository": "https://github.com/kajisho5/ffmpeg-skill",
+        "exact_commit_not_asserted": true
+      }
+    ]
+  },
+  "validation": {
+    "quick_validate": "Skill is valid!",
+    "original_files_hash_verified": 7,
+    "native_audio_work_executed": false
+  }
+}

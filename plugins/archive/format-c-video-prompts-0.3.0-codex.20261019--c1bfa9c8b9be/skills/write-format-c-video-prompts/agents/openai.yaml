@@ -1,0 +1,4 @@
+interface:
+  display_name: "分组时间轴表演提示词"
+  short_description: "按连续分段时间轴写清情绪触发、可见动作、对手反应与镜头接续"
+  default_prompt: "使用 $write-format-c-video-prompts 读取本机统一的分组时间轴表演提示词技能，将当前剧本写成 Sxx 标题、风格主情绪、光影、资产映射及连续分段时间轴的最终提示词；保留源语言原台词。"
